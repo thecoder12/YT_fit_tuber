@@ -13,22 +13,25 @@
         }
 
         :root {
-            --primary-color: #2563eb;
-            --secondary-color: #10b981;
-            --danger-color: #ef4444;
-            --warning-color: #f59e0b;
-            --bg-color: #f8fafc;
+            --primary-color: #047857;
+            --primary-light: #059669;
+            --secondary-color: #0891b2;
+            --danger-color: #dc2626;
+            --warning-color: #d97706;
+            --bg-color: #f9fafb;
             --card-bg: #ffffff;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
-            --border-color: #e2e8f0;
+            --text-primary: #111827;
+            --text-secondary: #6b7280;
+            --border-color: #e5e7eb;
             --success-light: #d1fae5;
             --danger-light: #fee2e2;
+            --header-bg: #ffffff;
+            --accent-color: #10b981;
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--bg-color);
             color: var(--text-primary);
             line-height: 1.6;
             min-height: 100vh;
@@ -43,11 +46,11 @@
 
         /* Header */
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 0.75rem 0;
-            margin-bottom: 1.5rem;
+            background: var(--header-bg);
+            border-bottom: 2px solid var(--primary-color);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            padding: 0.5rem 0;
+            margin-bottom: 1rem;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -55,16 +58,22 @@
 
         .header-content {
             display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .header-main {
+            flex: 1;
         }
 
         .breadcrumb {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             color: var(--text-secondary);
+            margin-bottom: 0.3rem;
         }
 
         .breadcrumb a {
@@ -82,25 +91,26 @@
 
         h1 {
             color: var(--primary-color);
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            text-align: center;
+            margin-bottom: 0.15rem;
         }
 
         .subtitle {
-            text-align: center;
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
         .video-info {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--primary-color);
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            text-align: center;
-            margin-top: 0.5rem;
-            font-size: 0.85rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            white-space: nowrap;
+            flex-shrink: 0;
+            align-self: flex-start;
+            border: 1px solid var(--primary-light);
         }
 
         .video-info a {
@@ -113,9 +123,10 @@
         .filter-section {
             background: var(--card-bg);
             padding: 1rem;
-            border-radius: 12px;
+            border-radius: 8px;
             margin-bottom: 1rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         .filter-buttons {
@@ -129,7 +140,7 @@
             padding: 0.5rem 1rem;
             border: 2px solid var(--border-color);
             background: white;
-            border-radius: 50px;
+            border-radius: 20px;
             cursor: pointer;
             font-weight: 600;
             font-size: 0.85rem;
@@ -150,59 +161,47 @@
         }
 
         .filter-btn.all.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--primary-color);
         }
 
         .filter-btn.best.active {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            background: var(--accent-color);
         }
 
         .filter-btn.worst.active {
-            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            background: var(--danger-color);
         }
 
         .filter-btn.ingredients.active {
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            background: var(--warning-color);
         }
 
-        /* Stats */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        .section-header {
+            display: flex;
+            align-items: center;
             gap: 0.75rem;
             margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid var(--border-color);
         }
 
-        .stat-card {
-            background: var(--card-bg);
-            padding: 0.5rem 0.75rem;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-        }
-
-        .stat-number {
+        .section-icon {
             font-size: 1.75rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--text-primary);
             font-weight: 700;
-            margin-bottom: 0.15rem;
         }
 
-        .stat-card.best .stat-number {
-            color: var(--secondary-color);
-        }
-
-        .stat-card.worst .stat-number {
-            color: var(--danger-color);
-        }
-
-        .stat-card.ingredients .stat-number {
-            color: var(--warning-color);
-        }
-
-        .stat-label {
-            color: var(--text-secondary);
-            font-weight: 500;
-            font-size: 0.75rem;
+        .section-count {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
         }
 
         /* Product Grid */
@@ -276,7 +275,7 @@
         .product-badge {
             display: inline-block;
             padding: 0.25rem 0.75rem;
-            border-radius: 50px;
+            border-radius: 16px;
             font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
@@ -314,47 +313,170 @@
 
         /* Footer */
         footer {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 1rem 0;
-            margin-top: 2rem;
-            border-radius: 12px;
+            background: var(--header-bg);
+            border-top: 2px solid var(--primary-color);
+            padding: 0.5rem 0;
+            margin-top: 1.5rem;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .footer-content {
             text-align: center;
             color: var(--text-secondary);
+            font-size: 0.85rem;
         }
 
         .footer-content strong {
             color: var(--primary-color);
         }
 
+        .footer-content p {
+            margin: 0.3rem 0;
+        }
+
+        .view-counter {
+            display: none; /* Hidden - service unavailable */
+            /* display: inline-flex; */
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .view-counter .count {
+            font-weight: 700;
+        }
+
         .disclaimer {
             background: #fef3c7;
             border-left: 4px solid var(--warning-color);
-            padding: 0.75rem;
-            margin: 0.75rem 0;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
             border-radius: 8px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
+            header {
+                padding: 0.3rem 0;
+                margin-bottom: 0.5rem;
+            }
+
+            .header-content {
+                gap: 0.4rem;
+            }
+
+            .header-main {
+                text-align: left;
+            }
+
+            .video-info {
+                padding: 0.25rem 0.5rem;
+                font-size: 0.6rem;
+            }
+
             h1 {
-                font-size: 1.5rem;
+                font-size: 0.9rem;
+                margin-bottom: 0.05rem;
+            }
+
+            .subtitle {
+                font-size: 0.6rem;
+            }
+
+            .breadcrumb {
+                font-size: 0.6rem;
+                margin-bottom: 0.15rem;
+            }
+
+            .content {
+                padding: 1rem;
+            }
+
+            .section-header {
+                gap: 0.5rem;
+                margin-bottom: 0.75rem;
+                padding-bottom: 0.5rem;
+            }
+
+            .section-icon {
+                font-size: 1.3rem;
+            }
+
+            .section-title {
+                font-size: 1.1rem;
+            }
+
+            .section-count {
+                padding: 0.2rem 0.6rem;
+                font-size: 0.75rem;
+            }
+
+            .filter-section {
+                padding: 0.5rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .filter-buttons {
+                gap: 0.4rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .filter-container {
+                gap: 0.4rem;
+                margin-bottom: 1rem;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+            }
+
+            .filter-btn {
+                padding: 0.4rem 0.7rem;
+                font-size: 0.7rem;
             }
 
             .products-grid {
                 grid-template-columns: 1fr;
+                gap: 0.75rem;
             }
 
-            .filter-buttons {
-                flex-direction: column;
+            .product-card {
+                padding: 1rem;
             }
 
-            .filter-btn {
-                width: 100%;
-                justify-content: center;
+            .product-icon {
+                font-size: 1.5rem;
+            }
+
+            .product-title h3 {
+                font-size: 0.95rem;
+            }
+
+            .product-badge {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.5rem;
+            }
+
+            .product-price {
+                font-size: 1rem;
+            }
+
+            .product-description {
+                font-size: 0.85rem;
+            }
+
+            footer {
+                padding: 0.4rem 0;
+            }
+
+            .footer-content p {
+                font-size: 0.8rem;
             }
         }
 
@@ -379,17 +501,17 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="breadcrumb">
-                    <a href="index.html">🏠 Home</a>
-                    <span>›</span>
-                    <span>Toothpaste</span>
+                <div class="header-main">
+                    <div class="breadcrumb">
+                        <a href="index.html">🏠 Home</a>
+                        <span>›</span>
+                        <span>Toothpaste</span>
+                    </div>
+                    <h1>🦷 Natural Toothpaste Guide</h1>
+                    <p class="subtitle">Safe & Affordable Under ₹219</p>
                 </div>
-                <h1>🦷 Natural Toothpaste Guide</h1>
-                <p class="subtitle">Safe & Affordable Toothpastes Under ₹219 | Based on Fit Tuber Review</p>
                 <div class="video-info">
-                    <strong>📺 Source:</strong> <a href="https://www.youtube.com/watch?v=vqRBCa1Jv4w" target="_blank">Watch on YouTube</a> | 
-                    <strong>Channel:</strong> Fit Tuber | 
-                    <strong>Presenter:</strong> Vivek
+                    <a href="https://www.youtube.com/watch?v=vqRBCa1Jv4w" target="_blank" style="color: white;">📺 Watch</a>
                 </div>
             </div>
         </div>
@@ -400,38 +522,29 @@
         <div class="filter-section">
             <div class="filter-buttons">
                 <button class="filter-btn all active" onclick="filterProducts('all')">
-                    🔍 All Products
+                    All
                 </button>
                 <button class="filter-btn best" onclick="filterProducts('best')">
-                    ✅ Recommended (7)
+                    Good (7)
                 </button>
                 <button class="filter-btn worst" onclick="filterProducts('worst')">
-                    ❌ Avoid These (9)
+                    Bad (9)
                 </button>
                 <button class="filter-btn ingredients" onclick="filterProducts('ingredients')">
-                    ⚠️ Harmful Ingredients (4)
+                    Harmful (4)
                 </button>
-            </div>
-        </div>
-
-        <!-- Stats -->
-        <div class="stats">
-            <div class="stat-card best">
-                <div class="stat-number">7</div>
-                <div class="stat-label">Recommended Products</div>
-            </div>
-            <div class="stat-card worst">
-                <div class="stat-number">9</div>
-                <div class="stat-label">Products to Avoid</div>
-            </div>
-            <div class="stat-card ingredients">
-                <div class="stat-number">4</div>
-                <div class="stat-label">Harmful Ingredients</div>
             </div>
         </div>
 
         <!-- Best Products Section -->
-        <div class="products-grid" id="best-products">
+        <div id="best-products">
+            <div class="section-header">
+                <span class="section-icon">✅</span>
+                <h2 class="section-title">Recommended Toothpastes</h2>
+                <span class="section-count">7 Products</span>
+            </div>
+
+            <div class="products-grid">
             <!-- Bento Dent -->
             <div class="product-card best" data-category="best">
                 <div class="product-header">
@@ -536,15 +649,18 @@
                     Best antibacterial exercise for teeth and gums according to modern research. Provides unmatched freshness. Traditional and highly effective natural option.
                 </div>
             </div>
+            </div>
         </div>
 
         <!-- Worst Products Section -->
-        <div class="section-header hidden" id="worst-section">
-            <h2>❌ Products to Avoid</h2>
-            <p>Commercial brands with harmful chemicals and deceptive marketing</p>
-        </div>
+        <div id="worst-products">
+            <div class="section-header">
+                <span class="section-icon">❌</span>
+                <h2 class="section-title">Products to Avoid</h2>
+                <span class="section-count">9 Products</span>
+            </div>
 
-        <div class="products-grid hidden" id="worst-products">
+            <div class="products-grid">
             <!-- Colgate -->
             <div class="product-card worst" data-category="worst">
                 <div class="product-header">
@@ -670,10 +786,18 @@
                     Hides ingredients in the base formulation. Has some ayurvedic herbs but rest is undisclosed. Compared to "a student who won't show their homework."
                 </div>
             </div>
+            </div>
         </div>
 
         <!-- Harmful Ingredients Section -->
-        <div class="products-grid hidden" id="ingredients-products">
+        <div id="ingredients-products">
+            <div class="section-header">
+                <span class="section-icon">⚠️</span>
+                <h2 class="section-title">Harmful Ingredients to Avoid</h2>
+                <span class="section-count">4 Ingredients</span>
+            </div>
+
+            <div class="products-grid">
             <!-- SLS -->
             <div class="product-card ingredient" data-category="ingredients">
                 <div class="product-header">
@@ -729,6 +853,7 @@
                     Many brands don't disclose what's in the "base" formulation. Lack of transparency is a major red flag. Always check the complete ingredient list.
                 </div>
             </div>
+            </div>
         </div>
 
         <!-- Footer -->
@@ -737,6 +862,9 @@
                 <div class="footer-content">
                     <div class="disclaimer">
                         <strong>⚠️ Disclaimer:</strong> This information is based on Fit Tuber's review (Video ID: vqRBCa1Jv4w). The reviewer states this is an honest opinion and none of the featured brands paid for placement. All products mentioned are Made in India.
+                    </div>
+                    <div class="view-counter">
+                        👁️ <span class="count" id="view-count">Loading...</span> views
                     </div>
                     <p><strong>Key Message:</strong> Natural toothpastes are affordable and healthier than commercial brands with harmful chemicals.</p>
                     <p style="margin-top: 1rem;">
@@ -795,6 +923,16 @@
             filterProducts('all');
             document.querySelector('.filter-btn.all').classList.add('active');
         });
+
+        // View counter
+        fetch('https://api.countapi.xyz/hit/fittuber-products/toothpaste')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('view-count').textContent = data.value.toLocaleString();
+            })
+            .catch(error => {
+                document.getElementById('view-count').textContent = '---';
+            });
     </script>
 </body>
 </html>
