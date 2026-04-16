@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Hair Oil Guide - Fit Tuber Review</title>
+    <meta name="description" content="Best natural hair oils in India. Expert recommendations and products to avoid based on Fit Tuber's review.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #10b981;
+            --danger-color: #ef4444;
+            --warning-color: #f59e0b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --success-light: #d1fae5;
+            --danger-light: #fee2e2;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 0.75rem 0;
+            margin-bottom: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--secondary-color);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .video-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .video-info a {
+            color: white;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        /* Filter Buttons */
+        .filter-section {
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--border-color);
+            background: white;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .filter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .filter-btn.active {
+            color: white;
+            border-color: transparent;
+        }
+
+        .filter-btn.all.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .filter-btn.best.active {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .filter-btn.worst.active {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        }
+
+        .filter-btn.ingredients.active {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+        }
+
+        .stat-number {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.15rem;
+        }
+
+        .stat-card.best .stat-number {
+            color: var(--secondary-color);
+        }
+
+        .stat-card.worst .stat-number {
+            color: var(--danger-color);
+        }
+
+        .stat-card.ingredients .stat-number {
+            color: var(--warning-color);
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.75rem;
+        }
+
+        /* Product Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card.best {
+            border-left-color: var(--secondary-color);
+        }
+
+        .product-card.worst {
+            border-left-color: var(--danger-color);
+        }
+
+        .product-card.ingredient {
+            border-left-color: var(--warning-color);
+        }
+
+        .product-header {
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .product-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .product-title {
+            flex: 1;
+        }
+
+        .product-card.best .product-icon {
+            color: var(--secondary-color);
+        }
+
+        .product-card.worst .product-icon {
+            color: var(--danger-color);
+        }
+
+        .product-card.ingredient .product-icon {
+            color: var(--warning-color);
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.35rem;
+            color: var(--text-primary);
+        }
+
+        .product-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-card.best .product-badge {
+            background: var(--success-light);
+            color: var(--secondary-color);
+        }
+
+        .product-card.worst .product-badge {
+            background: var(--danger-light);
+            color: var(--danger-color);
+        }
+
+        .product-card.ingredient .product-badge {
+            background: #fef3c7;
+            color: var(--warning-color);
+        }
+
+        .product-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+        }
+
+        /* Section Headers */
+
+        /* Hidden class for filtering */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 0;
+            margin-top: 2rem;
+            border-radius: 12px;
+        }
+
+        .footer-content {
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .footer-content strong {
+            color: var(--primary-color);
+        }
+
+        .disclaimer {
+            background: #fef3c7;
+            border-left: 4px solid var(--warning-color);
+            padding: 0.75rem;
+            margin: 0.75rem 0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-buttons {
+                flex-direction: column;
+            }
+
+            .filter-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .product-card {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: white;
+        }
+
+        .empty-state h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .empty-state p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="breadcrumb">
+                    <a href="index.html">🏠 Home</a>
+                    <span>›</span>
+                    <span>Hair Oil</span>
+                </div>
+                <h1>💆 Natural Hair Oil Guide</h1>
+                <p class="subtitle">Best Hair Oils in India | Based on Fit Tuber Review</p>
+                <div class="video-info">
+                    <strong>📺 Source:</strong> Coming Soon | 
+                    <strong>Channel:</strong> Fit Tuber | 
+                    <strong>Presenter:</strong> Vivek
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <div class="filter-buttons">
+                <button class="filter-btn all active" onclick="filterProducts('all')">
+                    🔍 All Products
+                </button>
+                <button class="filter-btn best" onclick="filterProducts('best')">
+                    ✅ Recommended (0)
+                </button>
+                <button class="filter-btn worst" onclick="filterProducts('worst')">
+                    ❌ Avoid These (0)
+                </button>
+                <button class="filter-btn ingredients" onclick="filterProducts('ingredients')">
+                    ⚠️ Harmful Ingredients (0)
+                </button>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats">
+            <div class="stat-card best">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Recommended Products</div>
+            </div>
+            <div class="stat-card worst">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Products to Avoid</div>
+            </div>
+            <div class="stat-card ingredients">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Harmful Ingredients</div>
+            </div>
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state">
+            <h2>🔜 Coming Soon</h2>
+            <p>Hair oil analysis will be available once the Fit Tuber review video is processed.</p>
+            <p style="margin-top: 1rem;">To add data, run:</p>
+            <p style="margin-top: 0.5rem; font-family: monospace; background: rgba(255,255,255,0.2); padding: 0.5rem; border-radius: 8px;">
+                python3.13 main.py "YOUTUBE_URL" --category hair-oil
+            </p>
+        </div>
+
+        <!-- Best Products Section (Hidden until data available) -->
+        <div class="products-grid hidden" id="best-products">
+            <!-- Products will be added when video is analyzed -->
+        </div>
+
+        <!-- Worst Products Section (Hidden until data available) -->
+        <div class="products-grid hidden" id="worst-products">
+            <!-- Products will be added when video is analyzed -->
+        </div>
+
+        <!-- Harmful Ingredients Section (Hidden until data available) -->
+        <div class="products-grid hidden" id="ingredients-products">
+            <!-- Ingredients will be added when video is analyzed -->
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="disclaimer">
+                        <strong>ℹ️ Note:</strong> This page will be populated with recommendations once a Fit Tuber hair oil review video is analyzed using the YouTube transcript analyzer.
+                    </div>
+                    <p style="margin-top: 1.5rem; color: var(--text-secondary); font-size: 0.9rem;">
+                        Part of the YouTube FitTuber Product Analysis Project
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function filterProducts(category) {
+            // Update active button
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Get all product grids
+            const bestProducts = document.getElementById('best-products');
+            const worstProducts = document.getElementById('worst-products');
+            const ingredientsProducts = document.getElementById('ingredients-products');
+
+            // Hide all grids
+            bestProducts.classList.add('hidden');
+            worstProducts.classList.add('hidden');
+            ingredientsProducts.classList.add('hidden');
+
+            // Show selected grids
+            switch(category) {
+                case 'all':
+                    bestProducts.classList.remove('hidden');
+                    worstProducts.classList.remove('hidden');
+                    ingredientsProducts.classList.remove('hidden');
+                    break;
+                case 'best':
+                    bestProducts.classList.remove('hidden');
+                    break;
+                case 'worst':
+                    worstProducts.classList.remove('hidden');
+                    break;
+                case 'ingredients':
+                    ingredientsProducts.classList.remove('hidden');
+                    break;
+            }
+
+            // Smooth scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show all sections by default on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            filterProducts('all');
+            document.querySelector('.filter-btn.all').classList.add('active');
+        });
+    </script>
+</body>
+</html>

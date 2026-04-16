@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Reviews Hub - Natural & Safe Products | Fit Tuber</title>
+    <meta name="description" content="Comprehensive guide to natural and safe products across multiple categories based on Fit Tuber's expert reviews.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #10b981;
+            --danger-color: #ef4444;
+            --warning-color: #f59e0b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --success-light: #d1fae5;
+            --danger-light: #fee2e2;
+            --hover-bg: #f1f5f9;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 0.75rem 0;
+            margin-bottom: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            text-align: center;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .channel-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .stat-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.15rem;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            margin-top: 0.15rem;
+        }
+
+        /* Category Table */
+
+        .table-container {
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        th {
+            padding: 1.25rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.2s ease;
+        }
+
+        tbody tr:hover {
+            background-color: var(--hover-bg);
+            cursor: pointer;
+        }
+
+        tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        td {
+            padding: 1.25rem 1rem;
+            vertical-align: middle;
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            margin-right: 0.5rem;
+        }
+
+        .category-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+        }
+
+        .category-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 0.25rem;
+        }
+
+        .badge-success {
+            background: var(--success-light);
+            color: var(--secondary-color);
+        }
+
+        .badge-danger {
+            background: var(--danger-light);
+            color: var(--danger-color);
+        }
+
+        .badge-info {
+            background: #dbeafe;
+            color: var(--primary-color);
+        }
+
+        .view-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .view-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .price-range {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 0;
+            margin-top: 2rem;
+            border-radius: 12px;
+        }
+
+        .footer-content {
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .footer-content strong {
+            color: var(--primary-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .table-container {
+                overflow-x: auto;
+            }
+
+            table {
+                min-width: 800px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            th, td {
+                padding: 1rem 0.75rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .table-container, .stat-card, .section-header {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .video-id {
+            font-family: monospace;
+            background: #f1f5f9;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>🌿 Natural Products Guide</h1>
+                <p class="subtitle">Expert Reviews & Recommendations Across Multiple Categories</p>
+                <div class="channel-info">
+                    📺 Based on Fit Tuber Reviews by Vivek
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">📋</div>
+                <div class="stat-number">3</div>
+                <div class="stat-label">Product Categories</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <div class="stat-number">34</div>
+                <div class="stat-label">Recommended Products</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">❌</div>
+                <div class="stat-number">36</div>
+                <div class="stat-label">Products to Avoid</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📹</div>
+                <div class="stat-number">3</div>
+                <div class="stat-label">Video Reviews Analyzed</div>
+            </div>
+        </div>
+
+        <!-- Section Header -->
+        <!-- Category Table -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Products Reviewed</th>
+                        <th>Price Range</th>
+                        <th>Video Source</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Toothpaste Row -->
+                    <tr onclick="window.location.href='toothpaste.html'">
+                        <td>
+                            <div style="display: flex; align-items: center;">
+                                <span class="category-icon">🦷</span>
+                                <div>
+                                    <div class="category-name">Toothpaste</div>
+                                    <div class="category-desc">Natural & Safe Toothpastes</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="badge badge-success">7 Recommended</span>
+                            <span class="badge badge-danger">9 Avoid</span>
+                            <span class="badge badge-info">4 Harmful Ingredients</span>
+                        </td>
+                        <td>
+                            <div class="price-range">₹70 - ₹219</div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary);">Affordable options available</div>
+                        </td>
+                        <td>
+                            <div><strong>Fit Tuber</strong></div>
+                            <div class="video-id">vqRBCa1Jv4w</div>
+                        </td>
+                        <td>
+                            <a href="toothpaste.html" class="view-btn" onclick="event.stopPropagation()">View Details →</a>
+                        </td>
+                    </tr>
+
+                    <!-- Soap Row -->
+                    <tr onclick="window.location.href='soap.html'">
+                        <td>
+                            <div style="display: flex; align-items: center;">
+                                <span class="category-icon">🧼</span>
+                                <div>
+                                    <div class="category-name">Soap & Body Wash</div>
+                                    <div class="category-desc">Natural Soaps & Body Washes for 2025</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="badge badge-success">9 Recommended</span>
+                            <span class="badge badge-danger">14 Avoid</span>
+                            <span class="badge badge-info">6 Harmful Ingredients</span>
+                        </td>
+                        <td>
+                            <div class="price-range">₹75 - ₹384</div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary);">Traditional DIY option: ₹120/kg</div>
+                        </td>
+                        <td>
+                            <div><strong>Fit Tuber</strong></div>
+                            <div class="video-id">c6yvIGvLWC8</div>
+                        </td>
+                        <td>
+                            <a href="soap.html" class="view-btn" onclick="event.stopPropagation()">View Details →</a>
+                        </td>
+                    </tr>
+
+                    <!-- Hair Oil Row -->
+                    <tr onclick="window.location.href='hair-oil.html'">
+                        <td>
+                            <div style="display: flex; align-items: center;">
+                                <span class="category-icon">💆</span>
+                                <div>
+                                    <div class="category-name">Hair Oil</div>
+                                    <div class="category-desc">Natural Hair Oils & Hair Care</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="badge badge-success">18 Recommended</span>
+                            <span class="badge badge-danger">13 Avoid</span>
+                            <span class="badge badge-info">5 Harmful Ingredients</span>
+                        </td>
+                        <td>
+                            <div class="price-range">₹128 - ₹340</div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary);">DIY option: Half the price</div>
+                        </td>
+                        <td>
+                            <div><strong>Fit Tuber</strong></div>
+                            <div class="video-id">r-DIv65zHwY</div>
+                        </td>
+                        <td>
+                            <a href="hair-oil.html" class="view-btn" onclick="event.stopPropagation()">View Details →</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <p style="margin-bottom: 1rem;">
+                        <strong>📺 Source:</strong> All recommendations based on Fit Tuber's unsponsored, honest reviews
+                    </p>
+                    <p style="margin-bottom: 1rem;">
+                        <strong>🎯 Mission:</strong> Help you make informed decisions about natural and safe products
+                    </p>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                        ⚠️ Always check product ingredients yourself. Formulations may change over time.
+                    </p>
+                    <p style="margin-top: 1.5rem; color: var(--text-secondary); font-size: 0.9rem;">
+                        Created from YouTube video transcript analysis | Last updated: April 16, 2026
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Add smooth hover effects and analytics tracking
+        document.querySelectorAll('tbody tr').forEach(row => {
+            row.addEventListener('click', function(e) {
+                // Already handled by onclick in HTML
+            });
+        });
+
+        // Optional: Log category views (for analytics)
+        function trackCategoryView(category) {
+            console.log(`Viewing category: ${category}`);
+            // Add your analytics code here
+        }
+    </script>
+</body>
+</html>

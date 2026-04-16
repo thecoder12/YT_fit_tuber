@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Toothpaste Guide - Fit Tuber Review</title>
+    <meta name="description" content="Comprehensive guide to natural and safe toothpastes under ₹219, based on Fit Tuber's expert review. Find the best products and avoid harmful chemicals.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #10b981;
+            --danger-color: #ef4444;
+            --warning-color: #f59e0b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --success-light: #d1fae5;
+            --danger-light: #fee2e2;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 0.75rem 0;
+            margin-bottom: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--secondary-color);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .video-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .video-info a {
+            color: white;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        /* Filter Buttons */
+        .filter-section {
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--border-color);
+            background: white;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .filter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .filter-btn.active {
+            color: white;
+            border-color: transparent;
+        }
+
+        .filter-btn.all.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .filter-btn.best.active {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .filter-btn.worst.active {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        }
+
+        .filter-btn.ingredients.active {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+        }
+
+        .stat-number {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.15rem;
+        }
+
+        .stat-card.best .stat-number {
+            color: var(--secondary-color);
+        }
+
+        .stat-card.worst .stat-number {
+            color: var(--danger-color);
+        }
+
+        .stat-card.ingredients .stat-number {
+            color: var(--warning-color);
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.75rem;
+        }
+
+        /* Product Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card.best {
+            border-left-color: var(--secondary-color);
+        }
+
+        .product-card.worst {
+            border-left-color: var(--danger-color);
+        }
+
+        .product-card.ingredient {
+            border-left-color: var(--warning-color);
+        }
+
+        .product-header {
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .product-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .product-title {
+            flex: 1;
+        }
+
+        .product-card.best .product-icon {
+            color: var(--secondary-color);
+        }
+
+        .product-card.worst .product-icon {
+            color: var(--danger-color);
+        }
+
+        .product-card.ingredient .product-icon {
+            color: var(--warning-color);
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.35rem;
+            color: var(--text-primary);
+        }
+
+        .product-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-card.best .product-badge {
+            background: var(--success-light);
+            color: var(--secondary-color);
+        }
+
+        .product-card.worst .product-badge {
+            background: var(--danger-light);
+            color: var(--danger-color);
+        }
+
+        .product-card.ingredient .product-badge {
+            background: #fef3c7;
+            color: var(--warning-color);
+        }
+
+        .product-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+        }
+
+        /* Section Headers */
+
+        /* Hidden class for filtering */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 0;
+            margin-top: 2rem;
+            border-radius: 12px;
+        }
+
+        .footer-content {
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .footer-content strong {
+            color: var(--primary-color);
+        }
+
+        .disclaimer {
+            background: #fef3c7;
+            border-left: 4px solid var(--warning-color);
+            padding: 0.75rem;
+            margin: 0.75rem 0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-buttons {
+                flex-direction: column;
+            }
+
+            .filter-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .product-card {
+            animation: fadeIn 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="breadcrumb">
+                    <a href="index.html">🏠 Home</a>
+                    <span>›</span>
+                    <span>Toothpaste</span>
+                </div>
+                <h1>🦷 Natural Toothpaste Guide</h1>
+                <p class="subtitle">Safe & Affordable Toothpastes Under ₹219 | Based on Fit Tuber Review</p>
+                <div class="video-info">
+                    <strong>📺 Source:</strong> <a href="https://www.youtube.com/watch?v=vqRBCa1Jv4w" target="_blank">Watch on YouTube</a> | 
+                    <strong>Channel:</strong> Fit Tuber | 
+                    <strong>Presenter:</strong> Vivek
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <div class="filter-buttons">
+                <button class="filter-btn all active" onclick="filterProducts('all')">
+                    🔍 All Products
+                </button>
+                <button class="filter-btn best" onclick="filterProducts('best')">
+                    ✅ Recommended (7)
+                </button>
+                <button class="filter-btn worst" onclick="filterProducts('worst')">
+                    ❌ Avoid These (9)
+                </button>
+                <button class="filter-btn ingredients" onclick="filterProducts('ingredients')">
+                    ⚠️ Harmful Ingredients (4)
+                </button>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats">
+            <div class="stat-card best">
+                <div class="stat-number">7</div>
+                <div class="stat-label">Recommended Products</div>
+            </div>
+            <div class="stat-card worst">
+                <div class="stat-number">9</div>
+                <div class="stat-label">Products to Avoid</div>
+            </div>
+            <div class="stat-card ingredients">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Harmful Ingredients</div>
+            </div>
+        </div>
+
+        <!-- Best Products Section -->
+        <div class="products-grid" id="best-products">
+            <!-- Bento Dent -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🌿</div>
+                    <div class="product-title">
+                        <h3>Bento Dent</h3>
+                        <span class="product-badge">Best Choice</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <strong>Price:</strong> ₹150 for 100g<br><br>
+                    100% natural ingredients with calcium bentonite, stevia, salt, menthol, peppermint, tea tree oil. Free from SLS and harmful chemicals. Available in multiple variants including charcoal, beetle leaf, and for sensitive teeth.
+                </div>
+            </div>
+
+            <!-- Biotech/Biotic -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🌱</div>
+                    <div class="product-title">
+                        <h3>Biotech/Biotic Herbal</h3>
+                        <span class="product-badge">Best Value</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <strong>Price:</strong> ₹90 for 140g (described as "a steal")<br><br>
+                    Transparent ingredient list with clove, neem, tulsi, non-toxic calcium carbonate and phosphate base. No fluoride or SLS. Truly worthy of its name.
+                </div>
+            </div>
+
+            <!-- Jagat's Activated Charcoal -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">⚫</div>
+                    <div class="product-title">
+                        <h3>Jagat's Activated Charcoal</h3>
+                        <span class="product-badge">Most Affordable</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <strong>Price:</strong> ₹70 for 100g<br><br>
+                    Real activated charcoal with 12 ayurvedic herbs including babool, mulethi, miswak, bakula, haldi. No SLS or fluoride. Teeth whitening and fights bad breath.
+                </div>
+            </div>
+
+            <!-- Biomed Super White -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">✨</div>
+                    <div class="product-title">
+                        <h3>Biomed Super White</h3>
+                        <span class="product-badge">Premium</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <strong>Price:</strong> ~₹100<br><br>
+                    Natural origin ingredients with herbs for whiter teeth and stronger gums. No sulfates, fluoride, or artificial colors/flavors. Three 100% natural variants: Super White, Calcimax, and Charcoal.
+                </div>
+            </div>
+
+            <!-- Maharishi Ayurveda's Ayurdent -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🕉️</div>
+                    <div class="product-title">
+                        <h3>Maharishi Ayurveda's Ayurdent</h3>
+                        <span class="product-badge">Ayurvedic</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <strong>Price:</strong> ₹110 for 75ml<br><br>
+                    Cosmos Natural certified with 100% natural origin ingredients and 20 precious herbs and oils. Authentic ayurvedic formulation for teeth whitening and gum strengthening.
+                </div>
+            </div>
+
+            <!-- Darshan Sanskar Juran -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🧪</div>
+                    <div class="product-title">
+                        <h3>Darshan Sanskar Juran</h3>
+                        <span class="product-badge">Tooth Powder</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <strong>Type:</strong> Classical Ayurvedic Tooth Powder<br><br>
+                    Classical ayurvedic formulation with over 10 chosen herbs. Economical and authentic. Benefits oral health and digestive system when used to massage gums.
+                </div>
+            </div>
+
+            <!-- Chewing Sticks -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🌳</div>
+                    <div class="product-title">
+                        <h3>Chewing Sticks/Datums</h3>
+                        <span class="product-badge">Traditional</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <strong>Variants:</strong> Neem, Babool<br><br>
+                    Best antibacterial exercise for teeth and gums according to modern research. Provides unmatched freshness. Traditional and highly effective natural option.
+                </div>
+            </div>
+        </div>
+
+        <!-- Worst Products Section -->
+        <div class="section-header hidden" id="worst-section">
+            <h2>❌ Products to Avoid</h2>
+            <p>Commercial brands with harmful chemicals and deceptive marketing</p>
+        </div>
+
+        <div class="products-grid hidden" id="worst-products">
+            <!-- Colgate -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Colgate</h3>
+                        <span class="product-badge">Avoid</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Contains Sodium Lauryl Sulfate (SLS) - a synthetic detergent and registered insecticide that causes skin irritation, mouth ulcers, and makes food taste bitter. Focuses on marketing gimmicks over actual benefits.
+                </div>
+            </div>
+
+            <!-- Close Up -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Close Up</h3>
+                        <span class="product-badge">Avoid</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Contains harmful chemicals and SLS. Cheap but uses deceptive marketing tactics. Similar issues to other commercial toothpastes.
+                </div>
+            </div>
+
+            <!-- Pepsodent -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Pepsodent</h3>
+                        <span class="product-badge">Avoid</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Contains harmful chemicals and synthetic detergents. Cheap but toxic. Prioritizes advertising over quality ingredients.
+                </div>
+            </div>
+
+            <!-- Sensodyne -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Sensodyne</h3>
+                        <span class="product-badge">Toxic</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Described as 'toxic' in the video. Contains harmful chemicals despite being marketed for sensitive teeth. Natural alternatives like Bento Dent recommended instead.
+                </div>
+            </div>
+
+            <!-- Himalaya -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Himalaya Toothpaste</h3>
+                        <span class="product-badge">Misleading</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Contains SLS, synthetic flavors, and fluoride. "Looks promising from front label but turn it and it's a complete disaster." Misleading branding.
+                </div>
+            </div>
+
+            <!-- Colgate Charcoal -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Colgate Charcoal</h3>
+                        <span class="product-badge">False Advertising</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Doesn't provide real activated charcoal benefits despite the name. False advertising. Use Jagat's Activated Charcoal instead for actual benefits.
+                </div>
+            </div>
+
+            <!-- Colgate Herbal -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Colgate Herbal</h3>
+                        <span class="product-badge">Not Herbal</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Not truly herbal. Compared to "real fruit juice" vs real fruit. Contains synthetic ingredients despite herbal branding.
+                </div>
+            </div>
+
+            <!-- Dantkanti -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Dantkanti (Patanjali)</h3>
+                        <span class="product-badge">Not Transparent</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Contains fluoride and doesn't clearly disclose base ingredients. Lacks transparency in formulation despite ayurvedic claims.
+                </div>
+            </div>
+
+            <!-- Liver Ayu's -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Liver Ayu's Toothpaste</h3>
+                        <span class="product-badge">Hidden Ingredients</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Hides ingredients in the base formulation. Has some ayurvedic herbs but rest is undisclosed. Compared to "a student who won't show their homework."
+                </div>
+            </div>
+        </div>
+
+        <!-- Harmful Ingredients Section -->
+        <div class="products-grid hidden" id="ingredients-products">
+            <!-- SLS -->
+            <div class="product-card ingredient" data-category="ingredients">
+                <div class="product-header">
+                    <div class="product-icon">☣️</div>
+                    <div class="product-title">
+                        <h3>Sodium Lauryl Sulfate (SLS)</h3>
+                        <span class="product-badge">Toxic</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Synthetic detergent in almost every popular toothpaste. Registered insecticide. Causes skin irritation, mouth ulcers, and bitter taste after brushing.
+                </div>
+            </div>
+
+            <!-- Fluoride -->
+            <div class="product-card ingredient" data-category="ingredients">
+                <div class="product-header">
+                    <div class="product-icon">☣️</div>
+                    <div class="product-title">
+                        <h3>Fluoride</h3>
+                        <span class="product-badge">Dangerous</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Can erode enamel and cause major health problems. Water is already fluoridated. Just 2.8 grams can kill a 50kg adult. Especially dangerous for children who may ingest toothpaste.
+                </div>
+            </div>
+
+            <!-- Synthetic Flavors -->
+            <div class="product-card ingredient" data-category="ingredients">
+                <div class="product-header">
+                    <div class="product-icon">☣️</div>
+                    <div class="product-title">
+                        <h3>Synthetic Flavors & Colors</h3>
+                        <span class="product-badge">Harmful</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Artificial and potentially harmful with no health benefits. Added purely for taste and appearance.
+                </div>
+            </div>
+
+            <!-- Hidden Ingredients -->
+            <div class="product-card ingredient" data-category="ingredients">
+                <div class="product-header">
+                    <div class="product-icon">❓</div>
+                    <div class="product-title">
+                        <h3>Hidden Base Ingredients</h3>
+                        <span class="product-badge">Red Flag</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Many brands don't disclose what's in the "base" formulation. Lack of transparency is a major red flag. Always check the complete ingredient list.
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="disclaimer">
+                        <strong>⚠️ Disclaimer:</strong> This information is based on Fit Tuber's review (Video ID: vqRBCa1Jv4w). The reviewer states this is an honest opinion and none of the featured brands paid for placement. All products mentioned are Made in India.
+                    </div>
+                    <p><strong>Key Message:</strong> Natural toothpastes are affordable and healthier than commercial brands with harmful chemicals.</p>
+                    <p style="margin-top: 1rem;">
+                        <strong>💡 Always Remember:</strong> Read the ingredient list on the back of the pack, don't fall for marketing gimmicks, and verify each product individually.
+                    </p>
+                    <p style="margin-top: 1.5rem; color: var(--text-secondary); font-size: 0.9rem;">
+                        Created from YouTube video transcript analysis | Data generated on April 16, 2026
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function filterProducts(category) {
+            // Update active button
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Get all product grids
+            const bestProducts = document.getElementById('best-products');
+            const worstProducts = document.getElementById('worst-products');
+            const ingredientsProducts = document.getElementById('ingredients-products');
+
+            // Hide all grids
+            bestProducts.classList.add('hidden');
+            worstProducts.classList.add('hidden');
+            ingredientsProducts.classList.add('hidden');
+
+            // Show selected grids
+            switch(category) {
+                case 'all':
+                    bestProducts.classList.remove('hidden');
+                    worstProducts.classList.remove('hidden');
+                    ingredientsProducts.classList.remove('hidden');
+                    break;
+                case 'best':
+                    bestProducts.classList.remove('hidden');
+                    break;
+                case 'worst':
+                    worstProducts.classList.remove('hidden');
+                    break;
+                case 'ingredients':
+                    ingredientsProducts.classList.remove('hidden');
+                    break;
+            }
+
+            // Smooth scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show all sections by default on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            filterProducts('all');
+            document.querySelector('.filter-btn.all').classList.add('active');
+        });
+    </script>
+</body>
+</html>

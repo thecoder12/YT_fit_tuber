@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Soap & Body Wash Guide - Fit Tuber Review</title>
+    <meta name="description" content="Best natural soaps and body washes in India 2025. Expert recommendations and products to avoid based on Fit Tuber's review.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #10b981;
+            --danger-color: #ef4444;
+            --warning-color: #f59e0b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --success-light: #d1fae5;
+            --danger-light: #fee2e2;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 0.75rem 0;
+            margin-bottom: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--secondary-color);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .video-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .video-info a {
+            color: white;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        /* Filter Buttons */
+        .filter-section {
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--border-color);
+            background: white;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .filter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .filter-btn.active {
+            color: white;
+            border-color: transparent;
+        }
+
+        .filter-btn.all.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .filter-btn.best.active {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .filter-btn.worst.active {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        }
+
+        .filter-btn.ingredients.active {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+        }
+
+        .stat-number {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.15rem;
+        }
+
+        .stat-card.best .stat-number {
+            color: var(--secondary-color);
+        }
+
+        .stat-card.worst .stat-number {
+            color: var(--danger-color);
+        }
+
+        .stat-card.ingredients .stat-number {
+            color: var(--warning-color);
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.75rem;
+        }
+
+        /* Product Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card.best {
+            border-left-color: var(--secondary-color);
+        }
+
+        .product-card.worst {
+            border-left-color: var(--danger-color);
+        }
+
+        .product-card.ingredient {
+            border-left-color: var(--warning-color);
+        }
+
+        .product-header {
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .product-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .product-title {
+            flex: 1;
+        }
+
+        .product-card.best .product-icon {
+            color: var(--secondary-color);
+        }
+
+        .product-card.worst .product-icon {
+            color: var(--danger-color);
+        }
+
+        .product-card.ingredient .product-icon {
+            color: var(--warning-color);
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.35rem;
+            color: var(--text-primary);
+        }
+
+        .product-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-card.best .product-badge {
+            background: var(--success-light);
+            color: var(--secondary-color);
+        }
+
+        .product-card.worst .product-badge {
+            background: var(--danger-light);
+            color: var(--danger-color);
+        }
+
+        .product-card.ingredient .product-badge {
+            background: #fef3c7;
+            color: var(--warning-color);
+        }
+
+        .product-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+        }
+
+        /* Section Headers */
+
+        /* Hidden class for filtering */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 0;
+            margin-top: 2rem;
+            border-radius: 12px;
+        }
+
+        .footer-content {
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .footer-content strong {
+            color: var(--primary-color);
+        }
+
+        .disclaimer {
+            background: #fef3c7;
+            border-left: 4px solid var(--warning-color);
+            padding: 0.75rem;
+            margin: 0.75rem 0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-buttons {
+                flex-direction: column;
+            }
+
+            .filter-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .product-card {
+            animation: fadeIn 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="breadcrumb">
+                    <a href="index.html">🏠 Home</a>
+                    <span>›</span>
+                    <span>Soap & Body Wash</span>
+                </div>
+                <h1>🧼 Natural Soap & Body Wash Guide</h1>
+                <p class="subtitle">Best Soaps and Body Washes in India 2025 | Based on Fit Tuber Review</p>
+                <div class="video-info">
+                    <strong>📺 Source:</strong> <a href="https://www.youtube.com/watch?v=c6yvIGvLWC8" target="_blank">Watch on YouTube</a> | 
+                    <strong>Channel:</strong> Fit Tuber | 
+                    <strong>Presenter:</strong> Vivek
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <div class="filter-buttons">
+                <button class="filter-btn all active" onclick="filterProducts('all')">
+                    🔍 All Products
+                </button>
+                <button class="filter-btn best" onclick="filterProducts('best')">
+                    ✅ Recommended (9)
+                </button>
+                <button class="filter-btn worst" onclick="filterProducts('worst')">
+                    ❌ Avoid These (14)
+                </button>
+                <button class="filter-btn ingredients" onclick="filterProducts('ingredients')">
+                    ⚠️ Harmful Ingredients (6)
+                </button>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats">
+            <div class="stat-card best">
+                <div class="stat-number">9</div>
+                <div class="stat-label">Recommended Products</div>
+            </div>
+            <div class="stat-card worst">
+                <div class="stat-number">14</div>
+                <div class="stat-label">Products to Avoid</div>
+            </div>
+            <div class="stat-card ingredients">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Harmful Ingredients</div>
+            </div>
+        </div>
+
+        <!-- Best Products Section -->
+        <div class="products-grid" id="best-products">
+            <!-- Niga Organics -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🌿</div>
+                    <div class="product-title">
+                        <h3>Niga Organics Sandalwood & Turmeric</h3>
+                        <span class="product-badge">Premium Choice</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <strong>Price:</strong> ₹220 per soap (lasts 2 months)<br><br>
+                    100% natural and organic ingredients with virgin coconut oil, olive oil, almond oil. No artificial fragrances/colors or preservatives. Mild, non-irritating for all skin types.
+                </div>
+            </div>
+
+            <!-- Capria's -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🥥</div>
+                    <div class="product-title">
+                        <h3>Capria's Cold-Pressed Coconut Oil Soap</h3>
+                        <span class="product-badge">Best Value</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <strong>Price:</strong> ₹75 per soap (₹375 for pack of 5)<br><br>
+                    Straightforward natural ingredients: cold-pressed coconut oil, sodium hydroxide, essential oils, organic turmeric. Most economical quality option. Also available in Coffee Cinnamon variant.
+                </div>
+            </div>
+
+            <!-- Shisha Ayurveda -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🕉️</div>
+                    <div class="product-title">
+                        <h3>Shisha Ayurveda Mud Soap</h3>
+                        <span class="product-badge">Ayurvedic</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <strong>Price:</strong> ₹198 for 125g<br><br>
+                    Truly ayurvedic with multani mitti and nalpamaradi oil, 14-15 herbs. Controls sun damage, pigmentation, uneven skin tone. Best for acne-prone/oily skin.
+                </div>
+            </div>
+
+            <!-- Ancient Living -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🌱</div>
+                    <div class="product-title">
+                        <h3>Ancient Living Handmade Soaps</h3>
+                        <span class="product-badge">Combo Pack</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <strong>Price:</strong> ₹122 per soap (₹367 for pack of 3)<br><br>
+                    Economical truly ayurvedic soaps (Multani Mitti, Tulsi, Kasturi Methi). Clean ingredients: coconut oil, sodium hydroxide, no additives. Better than Himalaya, Biotech, Margo.
+                </div>
+            </div>
+
+            <!-- Just Herbs -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🍊</div>
+                    <div class="product-title">
+                        <h3>Just Herbs Vitamin C Body Wash</h3>
+                        <span class="product-badge">Brightening</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <strong>Price:</strong> ₹277 for 300ml<br><br>
+                    100% natural with amla, lime, sweet orange, licorice, aloe vera, walnut. No SLS/EDTAs/artificial ingredients. Cleanses effectively and boosts collagen.
+                </div>
+            </div>
+
+            <!-- Mother Sparsh -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">👶</div>
+                    <div class="product-title">
+                        <h3>Mother Sparsh Baby Wash</h3>
+                        <span class="product-badge">Sensitive Skin</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <strong>Price:</strong> ₹384 for 400ml<br><br>
+                    Clean label suitable for sensitive skin. Mild surfactants, no irritating chemicals. Contains oatmeal, lavender, nioli, rose, basil. Actually moisturizes unlike Dove.
+                </div>
+            </div>
+
+            <!-- Rustic Arts -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🌿</div>
+                    <div class="product-title">
+                        <h3>Rustic Arts Rosemary Peppermint</h3>
+                        <span class="product-badge">Acne-Prone</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    No skin-irritating ingredients. High-quality healing ingredients: rosemary, peppermint, aloe vera, clove oil. Excellent reviews. Specifically good for acne-prone and sensitive skin.
+                </div>
+            </div>
+
+            <!-- Biomun -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">💧</div>
+                    <div class="product-title">
+                        <h3>Biomun Hard Water Face Wash</h3>
+                        <span class="product-badge">Hard Water</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Specially designed for hard water damage. No sulfates/parabens/artificial ingredients. Contains ashwagandha, aloe vera, manjistha. Suitable for all skin types. <strong>Discount available!</strong>
+                </div>
+            </div>
+
+            <!-- Besan -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🥘</div>
+                    <div class="product-title">
+                        <h3>Besan (Gram Flour) DIY</h3>
+                        <span class="product-badge">Most Economical</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <strong>Price:</strong> ₹120 per kg (lasts 4-5 months)<br><br>
+                    Most authentic ayurvedic body wash. Rich in protein, mild scrub, removes dirt without stripping oils. <strong>HALF the price</strong> of market body washes! Brightens skin naturally.
+                </div>
+            </div>
+        </div>
+
+        <!-- Worst Products Section -->
+        <div class="products-grid hidden" id="worst-products">
+            <!-- Khadi Naturals -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Khadi Naturals Chandan Haldi</h3>
+                        <span class="product-badge">Avoid</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Uses soap flakes which are detergent-based soap noodles, quite harsh on skin. Not truly natural despite 'Naturals' branding.
+                </div>
+            </div>
+
+            <!-- Mysore Sandal -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Mysore Sandal Soap</h3>
+                        <span class="product-badge">Avoid</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Ingredients are 'even worse' than Khadi Naturals. Contains skin-irritating preservatives, artificial sandalwood fragrance, and artificial colors despite iconic status.
+                </div>
+            </div>
+
+            <!-- Dove Soap -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Dove Soap</h3>
+                        <span class="product-badge">Avoid</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Made from inferior ingredients. Cheap but damages skin. Contains harsh chemicals that strip natural oils.
+                </div>
+            </div>
+
+            <!-- Pears Soap -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Pears Soap</h3>
+                        <span class="product-badge">Avoid</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Made from inferior ingredients. Contains harmful chemicals despite transparent appearance.
+                </div>
+            </div>
+
+            <!-- Lux Soap -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Lux Soap</h3>
+                        <span class="product-badge">Avoid</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Cheap but damages skin. Contains harsh commercial soap ingredients.
+                </div>
+            </div>
+
+            <!-- Fiama Di Wills -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Fiama Di Wills Soap</h3>
+                        <span class="product-badge">Avoid</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Made from inferior ingredients. Should be avoided despite marketing claims.
+                </div>
+            </div>
+
+            <!-- Dove Body Wash -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Dove Body Wash</h3>
+                        <span class="product-badge">Throw Away</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Contains SLS, cross polymers, BHT, EDTA (all skin-irritating), artificial fragrances and colors. Tagline is misleading - doesn't actually nourish skin. Recommendation: "Throw Dove in the trash."
+                </div>
+            </div>
+
+            <!-- Pears Body Wash -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Pears Vitamin C Body Wash</h3>
+                        <span class="product-badge">Avoid</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Sodium lauryl sulfate based with EDTAs, artificial fragrances and colors. Harsh chemicals despite vitamin C marketing.
+                </div>
+            </div>
+
+            <!-- Lux Body Wash -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Lux Vitamin C Body Wash</h3>
+                        <span class="product-badge">Avoid</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    SLS paste with artificial ingredients. Commercial product with harmful chemicals.
+                </div>
+            </div>
+
+            <!-- Dot and Keys -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Dot and Keys Cica Salicylic Acid</h3>
+                        <span class="product-badge">Worsens Acne</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Contains many harsh chemicals that worsen inflammation. Has phosphate (no better than sulfate). Marketed for acne-prone skin but can aggravate problems.
+                </div>
+            </div>
+
+            <!-- Himalaya -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Himalaya Neem Tulsi Soap</h3>
+                        <span class="product-badge">Disgrace to Ayurveda</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Described as "a disgrace to Ayurveda." Contains artificial fragrances and cosmetic colors despite neem and tulsi branding.
+                </div>
+            </div>
+
+            <!-- Biotique -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Biotique 'Ayurvedic' Soap</h3>
+                        <span class="product-badge">Hidden Formula</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Doesn't disclose ingredients. Claims to be ayurvedic but hides formulation. Lack of transparency.
+                </div>
+            </div>
+
+            <!-- Indulekha -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Indulekha Soap</h3>
+                        <span class="product-badge">Incomplete Disclosure</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Lists only 10% of ingredients. Incomplete disclosure, lack of transparency.
+                </div>
+            </div>
+
+            <!-- Mama Earth -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Mama Earth Multani Mitti</h3>
+                        <span class="product-badge">Not As Good</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Ingredients don't compare to Ancient Living. Not as good as alternatives despite natural marketing.
+                </div>
+            </div>
+        </div>
+
+        <!-- Harmful Ingredients Section -->
+        <div class="products-grid hidden" id="ingredients-products">
+            <!-- SLS -->
+            <div class="product-card ingredient" data-category="ingredients">
+                <div class="product-header">
+                    <div class="product-icon">☣️</div>
+                    <div class="product-title">
+                        <h3>Sodium Lauryl Sulfate (SLS)</h3>
+                        <span class="product-badge">Toxic</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Harsh detergent in most commercial body washes. Strips skin's natural oils, causes dryness and irritation.
+                </div>
+            </div>
+
+            <!-- Cross Polymers, BHT, EDTA -->
+            <div class="product-card ingredient" data-category="ingredients">
+                <div class="product-header">
+                    <div class="product-icon">☣️</div>
+                    <div class="product-title">
+                        <h3>Cross Polymers, BHT, EDTA</h3>
+                        <span class="product-badge">Irritants</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Found in Dove and commercial products. All are skin-irritating chemicals. BHT is a preservative. EDTA is an unnecessary additive.
+                </div>
+            </div>
+
+            <!-- Phosphate -->
+            <div class="product-card ingredient" data-category="ingredients">
+                <div class="product-header">
+                    <div class="product-icon">☣️</div>
+                    <div class="product-title">
+                        <h3>Phosphate</h3>
+                        <span class="product-badge">No Better Than Sulfate</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Found in Dot and Keys products. "No better than sulfate" for skin health.
+                </div>
+            </div>
+
+            <!-- Soap Flakes -->
+            <div class="product-card ingredient" data-category="ingredients">
+                <div class="product-header">
+                    <div class="product-icon">☣️</div>
+                    <div class="product-title">
+                        <h3>Soap Flakes/Detergent Noodles</h3>
+                        <span class="product-badge">Harsh</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Used by Khadi Naturals. Harsh on skin, not true soap.
+                </div>
+            </div>
+
+            <!-- Artificial Fragrances -->
+            <div class="product-card ingredient" data-category="ingredients">
+                <div class="product-header">
+                    <div class="product-icon">☣️</div>
+                    <div class="product-title">
+                        <h3>Artificial Fragrances & Colors</h3>
+                        <span class="product-badge">Harmful</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Found in Mysore Sandal, Himalaya, Dove, Pears, Lux. Can cause irritation, allergies, and are unnecessary.
+                </div>
+            </div>
+
+            <!-- Preservatives -->
+            <div class="product-card ingredient" data-category="ingredients">
+                <div class="product-header">
+                    <div class="product-icon">☣️</div>
+                    <div class="product-title">
+                        <h3>Skin-Irritating Preservatives</h3>
+                        <span class="product-badge">Sensitivity</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Common in Mysore Sandal and commercial soaps. Can cause sensitivity and dryness.
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="disclaimer">
+                        <strong>⚠️ Key Message:</strong> Good soaps should remove dirt while preserving natural oils. If you need body lotion after every bath, your soap is stripping your skin's natural oils. Switch to mild, natural alternatives.
+                    </div>
+                    <p><strong>💡 Pro Tip:</strong> Use besan (gram flour) occasionally even with commercial products for authentic ayurvedic cleansing.</p>
+                    <p style="margin-top: 1rem;"><strong>Presenter:</strong> Vivek (Fit Tuber) | <strong>Disclosure:</strong> Unsponsored, honest review</p>
+                    <p style="margin-top: 1.5rem; color: var(--text-secondary); font-size: 0.9rem;">
+                        Created from YouTube video transcript analysis | Data generated on April 16, 2026
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function filterProducts(category) {
+            // Update active button
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Get all product grids
+            const bestProducts = document.getElementById('best-products');
+            const worstProducts = document.getElementById('worst-products');
+            const ingredientsProducts = document.getElementById('ingredients-products');
+
+            // Hide all grids
+            bestProducts.classList.add('hidden');
+            worstProducts.classList.add('hidden');
+            ingredientsProducts.classList.add('hidden');
+
+            // Show selected grids
+            switch(category) {
+                case 'all':
+                    bestProducts.classList.remove('hidden');
+                    worstProducts.classList.remove('hidden');
+                    ingredientsProducts.classList.remove('hidden');
+                    break;
+                case 'best':
+                    bestProducts.classList.remove('hidden');
+                    break;
+                case 'worst':
+                    worstProducts.classList.remove('hidden');
+                    break;
+                case 'ingredients':
+                    ingredientsProducts.classList.remove('hidden');
+                    break;
+            }
+
+            // Smooth scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show all sections by default on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            filterProducts('all');
+            document.querySelector('.filter-btn.all').classList.add('active');
+        });
+    </script>
+</body>
+</html>
