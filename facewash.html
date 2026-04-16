@@ -159,35 +159,60 @@
         }
 
         /* Filter Buttons */
-        .filter-container {
+        .filter-section {
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .filter-buttons {
             display: flex;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
+            gap: 0.5rem;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         .filter-btn {
-            padding: 0.6rem 1.2rem;
+            padding: 0.5rem 1rem;
             border: 2px solid var(--border-color);
             background: white;
             border-radius: 20px;
             cursor: pointer;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: all 0.3s ease;
-            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
         }
 
         .filter-btn:hover {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
         .filter-btn.active {
-            background: var(--primary-color);
             color: white;
             border-color: transparent;
+        }
+
+        .filter-btn.all.active {
+            background: var(--primary-color);
+        }
+
+        .filter-btn.best.active {
+            background: var(--accent-color);
+        }
+
+        .filter-btn.worst.active {
+            background: var(--danger-color);
+        }
+
+        .filter-btn.ingredients.active {
+            background: var(--warning-color);
         }
 
         /* Category Subsections */
@@ -431,14 +456,20 @@
                 font-size: 0.75rem;
             }
 
-            .filter-container {
-                gap: 0.5rem;
-                margin-bottom: 1rem;
+            .filter-section {
+                padding: 0.5rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .filter-buttons {
+                gap: 0.4rem;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
             .filter-btn {
-                padding: 0.5rem 1rem;
-                font-size: 0.8rem;
+                padding: 0.4rem 0.7rem;
+                font-size: 0.7rem;
             }
 
             .products-grid {
@@ -514,12 +545,22 @@
         </header>
 
         <div class="content">
-            <!-- Filter Buttons -->
-            <div class="filter-container">
-                <button class="filter-btn all active" onclick="filterProducts('all')">📋 All Products</button>
-                <button class="filter-btn best" onclick="filterProducts('best')">✅ Recommended (18)</button>
-                <button class="filter-btn worst" onclick="filterProducts('worst')">❌ Avoid (16)</button>
-                <button class="filter-btn ingredients" onclick="filterProducts('ingredients')">⚠️ Harmful Ingredients (6)</button>
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <div class="filter-buttons">
+                    <button class="filter-btn all active" onclick="filterProducts('all')">
+                        All
+                    </button>
+                    <button class="filter-btn best" onclick="filterProducts('best')">
+                        Good (18)
+                    </button>
+                    <button class="filter-btn worst" onclick="filterProducts('worst')">
+                        Bad (16)
+                    </button>
+                    <button class="filter-btn ingredients" onclick="filterProducts('ingredients')">
+                        Harmful (6)
+                    </button>
+                </div>
             </div>
 
             <!-- RECOMMENDED PRODUCTS -->

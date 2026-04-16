@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best Shampoo in India 2024 - Fit Tuber Review</title>
-    <meta name="description" content="Comprehensive guide to natural and toxin-free shampoos in India. Find the best online, offline, shampoo bars, and powdered options from Fit Tuber's expert review of 100+ products.">
+    <title>Best Moisturizer in India 2024 - Fit Tuber Review</title>
+    <meta name="description" content="Comprehensive guide to choosing the right moisturizer by skin type. Find the best moisturizers for dry, oily, combination, and sensitive skin from Fit Tuber's expert review of 50+ products.">
     <style>
         * {
             margin: 0;
@@ -211,10 +211,6 @@
             background: var(--danger-color);
         }
 
-        .filter-btn.ingredients.active {
-            background: var(--warning-color);
-        }
-
         /* Category Subsections */
         .category-subsection {
             margin-bottom: 2rem;
@@ -271,10 +267,6 @@
             border-left: 4px solid var(--danger-color);
         }
 
-        .product-card.ingredient {
-            border-left: 4px solid var(--warning-color);
-        }
-
         .product-header {
             display: flex;
             gap: 0.75rem;
@@ -306,11 +298,6 @@
         .product-card.worst .product-badge {
             background: var(--danger-light);
             color: var(--danger-color);
-        }
-
-        .product-card.ingredient .product-badge {
-            background: #fef3c7;
-            color: var(--warning-color);
         }
 
         .product-price {
@@ -379,20 +366,7 @@
         }
 
         .view-counter {
-            display: none; /* Hidden - service unavailable */
-            /* display: inline-flex; */
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--primary-color);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            margin: 0.75rem 0;
-        }
-
-        .view-counter .count {
-            font-weight: 700;
+            display: none;
         }
 
         .hidden {
@@ -410,10 +384,6 @@
                 gap: 0.4rem;
             }
 
-            .header-main {
-                text-align: left;
-            }
-
             .video-info {
                 padding: 0.25rem 0.5rem;
                 font-size: 0.6rem;
@@ -421,7 +391,6 @@
 
             h1 {
                 font-size: 0.9rem;
-                margin-bottom: 0.05rem;
             }
 
             .subtitle {
@@ -430,7 +399,6 @@
 
             .breadcrumb {
                 font-size: 0.6rem;
-                margin-bottom: 0.15rem;
             }
 
             .content {
@@ -461,12 +429,6 @@
                 margin-bottom: 0.75rem;
             }
 
-            .filter-buttons {
-                gap: 0.4rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
             .filter-btn {
                 padding: 0.4rem 0.7rem;
                 font-size: 0.7rem;
@@ -481,46 +443,12 @@
                 padding: 1rem;
             }
 
-            .product-icon {
-                font-size: 1.5rem;
-            }
-
-            .product-title h3 {
-                font-size: 0.95rem;
-            }
-
-            .product-badge {
-                font-size: 0.7rem;
-                padding: 0.2rem 0.5rem;
-            }
-
-            .product-price {
-                font-size: 1rem;
-            }
-
-            .product-description {
-                font-size: 0.85rem;
-            }
-
             .category-subsection-header {
                 padding: 0.6rem 0.8rem;
-                margin-bottom: 0.75rem;
             }
 
             .category-subsection-title {
                 font-size: 0.95rem;
-            }
-
-            .category-subsection-desc {
-                font-size: 0.75rem;
-            }
-
-            footer {
-                padding: 0.4rem 0;
-            }
-
-            .footer-content p {
-                font-size: 0.8rem;
             }
         }
     </style>
@@ -533,12 +461,12 @@
                     <div class="breadcrumb">
                         <a href="index.html">🏠 Home</a>
                         <span>›</span>
-                        <span>Shampoo</span>
+                        <span>Moisturizer</span>
                     </div>
-                    <h1>🚿 Best Shampoo in India 2024</h1>
-                    <p class="subtitle">Natural & Toxin-Free Shampoos | 100+ Products Reviewed</p>
+                    <h1>💧 Best Moisturizer in India 2024</h1>
+                    <p class="subtitle">Choose by Skin Type | 50+ Products Reviewed</p>
                 </div>
-                <a href="https://www.youtube.com/watch?v=BvYwa6u0WLI" target="_blank" class="video-info">
+                <a href="https://www.youtube.com/watch?v=urzOFEAZ-2M" target="_blank" class="video-info">
                     ▶️ Watch Review
                 </a>
             </div>
@@ -552,13 +480,10 @@
                         All
                     </button>
                     <button class="filter-btn best" onclick="filterProducts('best')">
-                        Good (15)
+                        Good (20)
                     </button>
                     <button class="filter-btn worst" onclick="filterProducts('worst')">
-                        Bad (7)
-                    </button>
-                    <button class="filter-btn ingredients" onclick="filterProducts('ingredients')">
-                        Harmful (6)
+                        Bad (10)
                     </button>
                 </div>
             </div>
@@ -567,263 +492,322 @@
             <div id="best-products">
                 <div class="section-header">
                     <span class="section-icon">✅</span>
-                    <h2 class="section-title">Recommended Shampoos</h2>
-                    <span class="section-count">15 Products</span>
+                    <h2 class="section-title">Recommended Moisturizers</h2>
+                    <span class="section-count">20 Products</span>
                 </div>
 
-                <!-- Category 1: Best Online -->
+                <!-- Dry Skin -->
                 <div class="category-subsection">
                     <div class="category-subsection-header">
-                        <div class="category-subsection-title">🌐 Best Online Shampoos</div>
-                        <div class="category-subsection-desc">Premium toxin-free options | All ingredients disclosed</div>
+                        <div class="category-subsection-title">🏜️ For Dry Skin</div>
+                        <div class="category-subsection-desc">Thick oil-based moisturizers | Heavy oils for hydration</div>
                     </div>
 
                     <div class="products-grid">
-                        <!-- Just Herbs -->
                         <div class="product-card best" data-category="best">
                             <div class="product-header">
-                                <div class="product-icon">✨</div>
+                                <div class="product-icon">🍫</div>
                                 <div class="product-title">
-                                    <h3>Just Herbs 8 in 1 Root Nourishing Hair Fall Control Shampoo</h3>
-                                    <span class="product-badge">Top Pick</span>
+                                    <h3>Nat Habits Fresh Whipped Skin Malai Moisturiser</h3>
+                                    <span class="product-badge">Online Best</span>
                                 </div>
                             </div>
-                            <div class="product-price">₹355 / 200ml</div>
+                            <div class="product-price">₹500 / 200ml</div>
                             <div class="product-description">
-                                Contains amla, neem, hibiscus, henna, vetiver, fenugreek. Free from harsh chemicals. All ingredients clearly mentioned. Transparent texture, makes good lather, natural fragrance from plant essential oils.
+                                Contains cocoa butter, shea, raw milk, walnut, almond, coconut, sesame, and olive oils. Strong chocolaty smell from natural essential oils. Not a single harsh chemical.
                             </div>
                             <div class="product-details">
                                 <div class="detail-item">
+                                    <span class="detail-label">Lasts:</span>
+                                    <span class="detail-value">3 months</span>
+                                </div>
+                                <div class="detail-item">
                                     <span class="detail-label">Best For:</span>
-                                    <span class="detail-value">Oily scalp</span>
+                                    <span class="detail-value">Dry, flaky skin</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- The Moms Company -->
-                        <div class="product-card best" data-category="best">
-                            <div class="product-header">
-                                <div class="product-icon">💪</div>
-                                <div class="product-title">
-                                    <h3>The Moms Company Natural Protein Shampoo</h3>
-                                    <span class="product-badge">Most Affordable</span>
-                                </div>
-                            </div>
-                            <div class="product-price">₹286 / 200ml</div>
-                            <div class="product-description">
-                                Contains quinoa protein, wheat protein, niacinamide, moringa oil. 100% toxin free. Protein-based formula for hair strength.
-                            </div>
-                            <div class="product-details">
-                                <div class="detail-item">
-                                    <span class="detail-label">Best For:</span>
-                                    <span class="detail-value">Dry hair</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Rustic Art -->
                         <div class="product-card best" data-category="best">
                             <div class="product-header">
                                 <div class="product-icon">🌿</div>
                                 <div class="product-title">
-                                    <h3>Rustic Art's Aloe Clary Sage Shampoo</h3>
-                                    <span class="product-badge">100% Toxin Free</span>
+                                    <h3>Just Herbs Ultra Moisturising Herbal Cream</h3>
+                                    <span class="product-badge">Ayurvedic</span>
                                 </div>
                             </div>
-                            <div class="product-price">₹360 / 200ml</div>
+                            <div class="product-price">₹382 / 100ml</div>
                             <div class="product-description">
-                                Hero ingredients - clary sage and aloe vera. 100% toxin free. Safe surfactants derived from coconut, no artificial fragrance.
+                                Blend of manjishtha, ashwagandha, chandan, neem, tulsi with coconut, sunflower, moringa oils and shea butter. Thick yet not greasy. Very mild smell.
                             </div>
                             <div class="product-details">
                                 <div class="detail-item">
                                     <span class="detail-label">Best For:</span>
-                                    <span class="detail-value">All hair types</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Category 2: Decent Offline -->
-                <div class="category-subsection">
-                    <div class="category-subsection-header">
-                        <div class="category-subsection-title">🏪 Decent Offline Options</div>
-                        <div class="category-subsection-desc">Available in local shops | No SLS/SLES</div>
-                    </div>
-
-                    <div class="products-grid">
-                        <!-- Dove -->
-                        <div class="product-card best" data-category="best">
-                            <div class="product-header">
-                                <div class="product-icon">🕊️</div>
-                                <div class="product-title">
-                                    <h3>Dove Hair Therapy Sulphate Free Shampoo</h3>
-                                    <span class="product-badge">Offline Best</span>
-                                </div>
-                            </div>
-                            <div class="product-price">₹450 / 380ml</div>
-                            <div class="product-description">
-                                No SLS or SLES but has some harsh chemicals. Much better than Dove's regular shampoo.
-                            </div>
-                            <div class="product-details">
-                                <div class="detail-item">
-                                    <span class="detail-label">Skin Type:</span>
-                                    <span class="detail-value">All types</span>
+                                    <span class="detail-value">Normal to dry skin</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Tresemme -->
-                        <div class="product-card best" data-category="best">
-                            <div class="product-header">
-                                <div class="product-icon">💫</div>
-                                <div class="product-title">
-                                    <h3>Tresemme Pro Protect Sulphate Free Shampoo</h3>
-                                    <span class="product-badge">Decent</span>
-                                </div>
-                            </div>
-                            <div class="product-description">
-                                Better than other Tresemme shampoos. No SLS/SLES.
-                            </div>
-                            <div class="product-details">
-                                <div class="detail-item">
-                                    <span class="detail-label">Skin Type:</span>
-                                    <span class="detail-value">All types</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Wow -->
-                        <div class="product-card best" data-category="best">
-                            <div class="product-header">
-                                <div class="product-icon">⭐</div>
-                                <div class="product-title">
-                                    <h3>Wow Red Onion Shampoo</h3>
-                                    <span class="product-badge">Better Choice</span>
-                                </div>
-                            </div>
-                            <div class="product-description">
-                                Better than Dove and Tresemme. No harsh chemicals except artificial fragrance.
-                            </div>
-                            <div class="product-details">
-                                <div class="detail-item">
-                                    <span class="detail-label">Skin Type:</span>
-                                    <span class="detail-value">All types</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Mamaearth -->
-                        <div class="product-card best" data-category="best">
-                            <div class="product-header">
-                                <div class="product-icon">🌍</div>
-                                <div class="product-title">
-                                    <h3>Mamaearth Onion Shampoo</h3>
-                                    <span class="product-badge">IFRA Certified</span>
-                                </div>
-                            </div>
-                            <div class="product-description">
-                                No harsh chemicals. Fragrance is IFRA certified. Easily available offline.
-                            </div>
-                            <div class="product-details">
-                                <div class="detail-item">
-                                    <span class="detail-label">Skin Type:</span>
-                                    <span class="detail-value">All types</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Category 3: Shampoo Bars -->
-                <div class="category-subsection">
-                    <div class="category-subsection-header">
-                        <div class="category-subsection-title">🧼 Shampoo Bars - Surfactant Based</div>
-                        <div class="category-subsection-desc">Eco-friendly | Lasts 2x longer | Travel friendly | Under ₹400</div>
-                    </div>
-
-                    <div class="products-grid">
-                        <!-- Shunyam -->
-                        <div class="product-card best" data-category="best">
-                            <div class="product-header">
-                                <div class="product-icon">🌺</div>
-                                <div class="product-title">
-                                    <h3>Shunyam Hibiscus Shampoo Bar</h3>
-                                    <span class="product-badge">Bar Best</span>
-                                </div>
-                            </div>
-                            <div class="product-price">Under ₹400</div>
-                            <div class="product-description">
-                                Similar to Category 1 shampoos minus water. Makes good lather. Lasts longer (= 2 bottles of 200ml), travel-friendly, eco-friendly.
-                            </div>
-                        </div>
-
-                        <!-- Earth Rhythm -->
                         <div class="product-card best" data-category="best">
                             <div class="product-header">
                                 <div class="product-icon">🌱</div>
                                 <div class="product-title">
-                                    <h3>Earth Rhythm Shikkakai Reetha and Curry Leaf Shampoo Bar</h3>
-                                    <span class="product-badge">Surfactant Based</span>
+                                    <h3>Bare Necessities Soak It Up Natural Moisturiser</h3>
+                                    <span class="product-badge">Face & Body</span>
                                 </div>
                             </div>
-                            <div class="product-price">Under ₹400</div>
+                            <div class="product-price">₹439 / 250g</div>
                             <div class="product-description">
-                                Surfactant-based, better performance than soap-based bars.
+                                Hemp seed oil based with apricot kernel and jojoba oils. Comparatively light. Phenoxyethanol preservative (not very harsh).
+                            </div>
+                            <div class="product-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Best For:</span>
+                                    <span class="detail-value">Normal to dry skin</span>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Rustic Art Bar -->
                         <div class="product-card best" data-category="best">
                             <div class="product-header">
-                                <div class="product-icon">🍃</div>
+                                <div class="product-icon">👶</div>
                                 <div class="product-title">
-                                    <h3>Rustic Art's Neem Tulasi Shampoo Bar</h3>
-                                    <span class="product-badge">100% Toxin Free</span>
+                                    <h3>The Moms Company Natural Baby Lotion</h3>
+                                    <span class="product-badge">Most Economical</span>
                                 </div>
                             </div>
-                            <div class="product-price">Under ₹400</div>
+                            <div class="product-price">₹294 / 200ml</div>
                             <div class="product-description">
-                                100% toxin free, makes decent lather, easy to use.
+                                100% toxin free. No mineral oil. Can be used by all ages on face and body. Better than other baby lotions.
+                            </div>
+                            <div class="product-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Type:</span>
+                                    <span class="detail-value">Face & Body</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card best" data-category="best">
+                            <div class="product-header">
+                                <div class="product-icon">⚕️</div>
+                                <div class="product-title">
+                                    <h3>Cetaphil DAM Moisturiser</h3>
+                                    <span class="product-badge">Best Offline</span>
+                                </div>
+                            </div>
+                            <div class="product-price">₹210 / 30ml</div>
+                            <div class="product-description">
+                                Free from mineral oil, petrolatum, petroleum jelly. Better than Nivea and Vaseline.
+                            </div>
+                        </div>
+
+                        <div class="product-card best" data-category="best">
+                            <div class="product-header">
+                                <div class="product-icon">🫒</div>
+                                <div class="product-title">
+                                    <h3>Himalaya Olive Nourishing Cream</h3>
+                                    <span class="product-badge">Economical Offline</span>
+                                </div>
+                            </div>
+                            <div class="product-price">₹210 / 200ml</div>
+                            <div class="product-description">
+                                Has some harsh chemicals but better than Nivea and Vaseline. Specifically this variant is better than other Himalaya creams.
+                            </div>
+                        </div>
+
+                        <div class="product-card best" data-category="best">
+                            <div class="product-header">
+                                <div class="product-icon">🌺</div>
+                                <div class="product-title">
+                                    <h3>Santulan's Radha Face Oil</h3>
+                                    <span class="product-badge">For Eczema</span>
+                                </div>
+                            </div>
+                            <div class="product-price">₹240 / 50ml</div>
+                            <div class="product-description">
+                                Made with milk, curd, and 30 skin-friendly herbs in coconut oil base. Exceptionally good for dry and damaged skin. Recommended for eczema.
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Category 4: Powdered Shampoos -->
+                <!-- Oily Skin -->
                 <div class="category-subsection">
                     <div class="category-subsection-header">
-                        <div class="category-subsection-title">🌾 Powdered Shampoos - Truly Ayurvedic</div>
-                        <div class="category-subsection-desc">100% edible ingredients | No surfactants | Potent medicine for damaged hair</div>
+                        <div class="category-subsection-title">💧 For Oily Skin</div>
+                        <div class="category-subsection-desc">Water-based or very light oil-based | Non-greasy look</div>
                     </div>
 
                     <div class="products-grid">
-                        <!-- Havintha -->
                         <div class="product-card best" data-category="best">
                             <div class="product-header">
-                                <div class="product-icon">🌾</div>
+                                <div class="product-icon">🌸</div>
                                 <div class="product-title">
-                                    <h3>Havintha Natural Hair Shampoo</h3>
-                                    <span class="product-badge">Edible Grade</span>
+                                    <h3>Aroma Magic's Juniper Berry Oil Free Moisturiser</h3>
+                                    <span class="product-badge">Top Choice</span>
                                 </div>
                             </div>
+                            <div class="product-price">₹356 / 200ml</div>
                             <div class="product-description">
-                                Just 4 ingredients - Amla, Reetha, Shikakai, Methidana. No surfactants, no preservatives, nothing unwanted. Smooth texture. Philosophy: What you can eat, you can apply (truly ayurvedic).
+                                Vegetable glycerin and aloe vera based with jojoba, patchouli, lemon. Genuine toxin-free vitamin C moisturizer. Better and more economical than Mamaearth. Natural calming fragrance.
                             </div>
                         </div>
 
-                        <!-- Forest Herbs -->
+                        <div class="product-card best" data-category="best">
+                            <div class="product-header">
+                                <div class="product-icon">🌹</div>
+                                <div class="product-title">
+                                    <h3>Indus Valley's Brightening Depigmentation Gel</h3>
+                                    <span class="product-badge">For Dark Spots</span>
+                                </div>
+                            </div>
+                            <div class="product-price">₹259 / 50g</div>
+                            <div class="product-description">
+                                Natural gel with rose, grape seed, cow yogurt, tea tree oil. Works well for oily skin with dark spots.
+                            </div>
+                        </div>
+
+                        <div class="product-card best" data-category="best">
+                            <div class="product-header">
+                                <div class="product-icon">🍃</div>
+                                <div class="product-title">
+                                    <h3>Rustic Art's Aloe Vera Neem Basil Gel</h3>
+                                    <span class="product-badge">Acne-Prone</span>
+                                </div>
+                            </div>
+                            <div class="product-price">₹320 / 100g</div>
+                            <div class="product-description">
+                                Aloe vera, tulsi, neem with vegetable glycerin, salicylic acid, vitamin E. Oil free. Works very well to get rid of pimples.
+                            </div>
+                        </div>
+
+                        <div class="product-card best" data-category="best">
+                            <div class="product-header">
+                                <div class="product-icon">🧪</div>
+                                <div class="product-title">
+                                    <h3>Deconstruct's Oil Free Moisturiser</h3>
+                                    <span class="product-badge">Offline Best</span>
+                                </div>
+                            </div>
+                            <div class="product-price">₹325 / 50g</div>
+                            <div class="product-description">
+                                Lightweight, non-greasy. Neither mineral oil nor silicone based.
+                            </div>
+                        </div>
+
+                        <div class="product-card best" data-category="best">
+                            <div class="product-header">
+                                <div class="product-icon">🍵</div>
+                                <div class="product-title">
+                                    <h3>Plum's Green Tea Moisturiser</h3>
+                                    <span class="product-badge">Good Offline</span>
+                                </div>
+                            </div>
+                            <div class="product-description">
+                                Good offline option for oily skin. Light gel-based formula.
+                            </div>
+                        </div>
+
+                        <div class="product-card best" data-category="best">
+                            <div class="product-header">
+                                <div class="product-icon">⚕️</div>
+                                <div class="product-title">
+                                    <h3>Sebamed Care Free Gel</h3>
+                                    <span class="product-badge">Better Choice</span>
+                                </div>
+                            </div>
+                            <div class="product-description">
+                                Better offline choice for oily skin types.
+                            </div>
+                        </div>
+
                         <div class="product-card best" data-category="best">
                             <div class="product-header">
                                 <div class="product-icon">🌿</div>
                                 <div class="product-title">
-                                    <h3>The Forest Herbs Shikakai Mix Hair Wash Powder</h3>
-                                    <span class="product-badge">Most Budget Friendly</span>
+                                    <h3>WOW Skin Sciences Aloe Vera Gel</h3>
+                                    <span class="product-badge">Very Oily Skin</span>
                                 </div>
                             </div>
-                            <div class="product-price">₹390 / 500g</div>
                             <div class="product-description">
-                                Just 7 herbs in powdered form. Cleans AND nourishes hair. Strengthens hair roots. Can be mixed with curd for deep conditioning hair mask. Tip: Add milk powder for dry hair.
+                                100% natural. No cosmetic color or artificial fragrance. Basic but effective for very oily skin.
+                            </div>
+                        </div>
+
+                        <div class="product-card best" data-category="best">
+                            <div class="product-header">
+                                <div class="product-icon">🥜</div>
+                                <div class="product-title">
+                                    <h3>Badam Rogan Shirin (Pure Almond Oil)</h3>
+                                    <span class="product-badge">Ayurvedic</span>
+                                </div>
+                            </div>
+                            <div class="product-description">
+                                Lightweight oil rich in linoleic acid. True Ayurvedic moisturizer for oily skin types.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sensitive Skin -->
+                <div class="category-subsection">
+                    <div class="category-subsection-header">
+                        <div class="category-subsection-title">🩹 For Sensitive Skin</div>
+                        <div class="category-subsection-desc">Minimal products | Cold-pressed oils | Traditional methods</div>
+                    </div>
+
+                    <div class="products-grid">
+                        <div class="product-card best" data-category="best">
+                            <div class="product-header">
+                                <div class="product-icon">🥥</div>
+                                <div class="product-title">
+                                    <h3>Cold-Pressed Virgin Coconut Oil</h3>
+                                    <span class="product-badge">Dry Sensitive</span>
+                                </div>
+                            </div>
+                            <div class="product-description">
+                                Traditional, simple, effective. For dry sensitive skin. Pure and natural.
+                            </div>
+                        </div>
+
+                        <div class="product-card best" data-category="best">
+                            <div class="product-header">
+                                <div class="product-icon">🌰</div>
+                                <div class="product-title">
+                                    <h3>Cold-Pressed Sesame Oil</h3>
+                                    <span class="product-badge">Dry Sensitive</span>
+                                </div>
+                            </div>
+                            <div class="product-description">
+                                Traditional Ayurvedic solution. Simple and effective for dry sensitive skin.
+                            </div>
+                        </div>
+
+                        <div class="product-card best" data-category="best">
+                            <div class="product-header">
+                                <div class="product-icon">💛</div>
+                                <div class="product-title">
+                                    <h3>Kumkumadi Tailam</h3>
+                                    <span class="product-badge">Classic Ayurvedic</span>
+                                </div>
+                            </div>
+                            <div class="product-description">
+                                Ayurveda's classic formulation. Can work for sensitive skin. Patch test recommended. Available online and offline.
+                            </div>
+                        </div>
+
+                        <div class="product-card best" data-category="best">
+                            <div class="product-header">
+                                <div class="product-icon">🧈</div>
+                                <div class="product-title">
+                                    <h3>Svarasya's Shat Dhaut Ghee</h3>
+                                    <span class="product-badge">100x Washed Ghee</span>
+                                </div>
+                            </div>
+                            <div class="product-price">₹700 / 50g</div>
+                            <div class="product-description">
+                                100 times washed ghee with saffron and licorice. Light and cooling. Soothes inflammation. Best bet for very sensitive skin when nothing suits.
                             </div>
                         </div>
                     </div>
@@ -834,210 +818,145 @@
             <div id="worst-products">
                 <div class="section-header">
                     <span class="section-icon">❌</span>
-                    <h2 class="section-title">Shampoos to Avoid</h2>
-                    <span class="section-count">7 Products</span>
+                    <h2 class="section-title">Moisturizers to Avoid</h2>
+                    <span class="section-count">10 Products</span>
                 </div>
 
                 <div class="category-subsection">
                     <div class="category-subsection-header">
-                        <div class="category-subsection-title">⚠️ Hidden Ingredients & False Claims</div>
-                        <div class="category-subsection-desc">Incomplete disclosure | Marketing tricks | Contains harmful ingredients</div>
+                        <div class="category-subsection-title">⛔ Mineral Oil & Silicone Based</div>
+                        <div class="category-subsection-desc">Cheap but skin damaging | Petroleum byproducts</div>
                     </div>
 
                     <div class="products-grid">
-                        <!-- Indulekha -->
                         <div class="product-card worst" data-category="worst">
                             <div class="product-header">
                                 <div class="product-icon">⛔</div>
                                 <div class="product-title">
-                                    <h3>Indulekha Bhringa Shampoo</h3>
-                                    <span class="product-badge">90% Hidden</span>
-                                </div>
-                            </div>
-                            <div class="product-price">₹240 / 200ml</div>
-                            <div class="product-description">
-                                Only mentions 10% ingredients (bhringraj, amla, herbs). Rest 90% "shampoo base" not disclosed. Cannot verify if sulphate-free or has parabens. Uses "Ayurvedic Proprietary Medicine" label to hide ingredients.
-                            </div>
-                        </div>
-
-                        <!-- Kesh King -->
-                        <div class="product-card worst" data-category="worst">
-                            <div class="product-header">
-                                <div class="product-icon">⛔</div>
-                                <div class="product-title">
-                                    <h3>Kesh King Shampoo Range</h3>
-                                    <span class="product-badge">Hidden Base</span>
+                                    <h3>Pond's Moisturising Cream</h3>
+                                    <span class="product-badge">Mineral Oil Based</span>
                                 </div>
                             </div>
                             <div class="product-description">
-                                Markets ayurvedic herbs but skilfully hides shampoo base ingredients.
+                                Mineral oil/petrolatum base (petroleum industry byproducts). Cheap but skin damaging.
                             </div>
                         </div>
 
-                        <!-- Patanjali -->
                         <div class="product-card worst" data-category="worst">
                             <div class="product-header">
                                 <div class="product-icon">⛔</div>
                                 <div class="product-title">
-                                    <h3>Patanjali Shampoo</h3>
-                                    <span class="product-badge">Contains Sulphate</span>
+                                    <h3>Nivea Creme</h3>
+                                    <span class="product-badge">Mineral Oil Based</span>
                                 </div>
                             </div>
                             <div class="product-description">
-                                At least mentions it has sulphate, but still not recommended.
+                                Mineral oil/petrolatum base. Popular but not healthy.
                             </div>
                         </div>
 
-                        <!-- Biotique -->
                         <div class="product-card worst" data-category="worst">
                             <div class="product-header">
                                 <div class="product-icon">⛔</div>
                                 <div class="product-title">
-                                    <h3>Biotique Shampoo</h3>
+                                    <h3>Vaseline</h3>
+                                    <span class="product-badge">Petroleum Jelly</span>
+                                </div>
+                            </div>
+                            <div class="product-description">
+                                Pure petroleum jelly. Cheap petroleum industry byproduct.
+                            </div>
+                        </div>
+
+                        <div class="product-card worst" data-category="worst">
+                            <div class="product-header">
+                                <div class="product-icon">⛔</div>
+                                <div class="product-title">
+                                    <h3>Lotus Alpha Moist Oil Free Moisturiser</h3>
                                     <span class="product-badge">Misleading</span>
                                 </div>
                             </div>
                             <div class="product-description">
-                                Very popular but highly misleading. Doesn't mention ingredients on bottle.
+                                Mineral oil based despite "oil free" claim.
                             </div>
                         </div>
 
-                        <!-- Forest Essentials -->
                         <div class="product-card worst" data-category="worst">
                             <div class="product-header">
                                 <div class="product-icon">⛔</div>
                                 <div class="product-title">
-                                    <h3>Forest Essentials Shampoo</h3>
-                                    <span class="product-badge">Premium But Incomplete</span>
+                                    <h3>Minimalist's B5 10% Oil Free Moisturiser</h3>
+                                    <span class="product-badge">Silicone Based</span>
                                 </div>
                             </div>
-                            <div class="product-price">₹1300 / 200ml</div>
                             <div class="product-description">
-                                Premium price but only mentions 65.5% of ingredients. Rest hidden.
+                                Contains cyclopentasiloxane, dimethicone, cyclomethicone. Even dermatologists believe silicones damage skin.
                             </div>
                         </div>
 
-                        <!-- Base QS -->
                         <div class="product-card worst" data-category="worst">
                             <div class="product-header">
                                 <div class="product-icon">⛔</div>
                                 <div class="product-title">
-                                    <h3>Any shampoo with "Base QS" or "Shampoo Base"</h3>
-                                    <span class="product-badge">Incomplete</span>
+                                    <h3>Neutrogena's Oil Free Moisturiser</h3>
+                                    <span class="product-badge">Silicone Based</span>
                                 </div>
                             </div>
                             <div class="product-description">
-                                Incomplete ingredient disclosure.
+                                Silicone based. Damages skin despite oil-free claim.
                             </div>
                         </div>
 
-                        <!-- 95% of Market -->
                         <div class="product-card worst" data-category="worst">
                             <div class="product-header">
                                 <div class="product-icon">⛔</div>
                                 <div class="product-title">
-                                    <h3>95% of shampoos in Indian market</h3>
-                                    <span class="product-badge">Contains SLS/SLES</span>
+                                    <h3>Himalaya's Oil Free Radiance Gel Cream</h3>
+                                    <span class="product-badge">Silicone Based</span>
                                 </div>
                             </div>
                             <div class="product-description">
-                                Contain SLS or SLES (strong detergents that damage hair follicles).
+                                Silicone based formula. Not suitable.
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- HARMFUL INGREDIENTS -->
-            <div id="ingredients-products">
-                <div class="section-header">
-                    <span class="section-icon">⚠️</span>
-                    <h2 class="section-title">Harmful Ingredients to Avoid</h2>
-                    <span class="section-count">6 Ingredients</span>
-                </div>
-
-                <div class="products-grid">
-                    <!-- SLS -->
-                    <div class="product-card ingredient" data-category="ingredients">
-                        <div class="product-header">
-                            <div class="product-icon">☣️</div>
-                            <div class="product-title">
-                                <h3>Sodium Lauryl Sulphate (SLS)</h3>
-                                <span class="product-badge">Most Harmful</span>
+                        <div class="product-card worst" data-category="worst">
+                            <div class="product-header">
+                                <div class="product-icon">⛔</div>
+                                <div class="product-title">
+                                    <h3>Pond's Light Moisturiser</h3>
+                                    <span class="product-badge">Harsh Chemicals</span>
+                                </div>
+                            </div>
+                            <div class="product-description">
+                                Bunch of harsh chemicals. Avoid completely.
                             </div>
                         </div>
-                        <div class="product-description">
-                            Found in: 95% of shampoos in Indian market. Strong detergent that damages hair follicles.
-                        </div>
-                    </div>
 
-                    <!-- SLES -->
-                    <div class="product-card ingredient" data-category="ingredients">
-                        <div class="product-header">
-                            <div class="product-icon">☣️</div>
-                            <div class="product-title">
-                                <h3>Sodium Lauryl Ether Sulphate (SLES)</h3>
-                                <span class="product-badge">Harmful</span>
+                        <div class="product-card worst" data-category="worst">
+                            <div class="product-header">
+                                <div class="product-icon">⛔</div>
+                                <div class="product-title">
+                                    <h3>Mamaearth Moisturizers</h3>
+                                    <span class="product-badge">Artificial Additives</span>
+                                </div>
+                            </div>
+                            <div class="product-description">
+                                Contains artificial fragrance and harsh chemicals.
                             </div>
                         </div>
-                        <div class="product-description">
-                            Found in: Most commercial shampoos. Strong detergent that weakens hair from roots.
-                        </div>
-                    </div>
 
-                    <!-- Artificial Fragrances -->
-                    <div class="product-card ingredient" data-category="ingredients">
-                        <div class="product-header">
-                            <div class="product-icon">☣️</div>
-                            <div class="product-title">
-                                <h3>Artificial Fragrances</h3>
-                                <span class="product-badge">Harmful</span>
+                        <div class="product-card worst" data-category="worst">
+                            <div class="product-header">
+                                <div class="product-icon">⛔</div>
+                                <div class="product-title">
+                                    <h3>Himalaya's Other Creams (except Olive Nourishing)</h3>
+                                    <span class="product-badge">Mineral Oil</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="product-description">
-                            Found in: Most commercial brands, some "natural" brands. Chemical-based, can irritate scalp.
-                        </div>
-                    </div>
-
-                    <!-- Artificial Colours -->
-                    <div class="product-card ingredient" data-category="ingredients">
-                        <div class="product-header">
-                            <div class="product-icon">☣️</div>
-                            <div class="product-title">
-                                <h3>Artificial Colours</h3>
-                                <span class="product-badge">Harmful</span>
+                            <div class="product-description">
+                                Most Himalaya creams contain mineral oil. Only Olive Nourishing variant is acceptable.
                             </div>
-                        </div>
-                        <div class="product-description">
-                            Found in: Preserve's shampoo bar and commercial shampoos. Unnecessary chemicals.
-                        </div>
-                    </div>
-
-                    <!-- Parabens -->
-                    <div class="product-card ingredient" data-category="ingredients">
-                        <div class="product-header">
-                            <div class="product-icon">☣️</div>
-                            <div class="product-title">
-                                <h3>Parabens</h3>
-                                <span class="product-badge">Harmful</span>
-                            </div>
-                        </div>
-                        <div class="product-description">
-                            Found in: Many commercial shampoos. Preservatives that can damage hair.
-                        </div>
-                    </div>
-
-                    <!-- Hidden Ingredients -->
-                    <div class="product-card ingredient" data-category="ingredients">
-                        <div class="product-header">
-                            <div class="product-icon">☣️</div>
-                            <div class="product-title">
-                                <h3>Hidden/Undisclosed Ingredients (Shampoo Base/Base QS)</h3>
-                                <span class="product-badge">Lack of Transparency</span>
-                            </div>
-                        </div>
-                        <div class="product-description">
-                            Found in: Indulekha, Kesh King, Biotique, Forest Essentials. Unknown chemicals, lack of transparency, potential for harmful ingredients.
                         </div>
                     </div>
                 </div>
@@ -1049,14 +968,11 @@
             <div class="container">
                 <div class="footer-content">
                     <div class="disclaimer">
-                        <strong>⚠️ Disclaimer:</strong> This information is based on Fit Tuber's review (Video ID: BvYwa6u0WLI). The reviewer analyzed over 100 shampoos and states this is an honest, unsponsored opinion. Always verify claims independently.
+                        <strong>⚠️ Disclaimer:</strong> This information is based on Fit Tuber's review (Video ID: urzOFEAZ-2M). The reviewer analyzed 50+ moisturizers. Always check ingredients and verify claims independently.
                     </div>
-                    <div class="view-counter">
-                        👁️ <span class="count" id="view-count">Loading...</span> views
-                    </div>
-                    <p><strong>Key Message:</strong> 95% shampoos have SLS/SLES OR hide ingredients. Choose transparency and natural ingredients.</p>
+                    <p><strong>Key Philosophy:</strong> Choose moisturizer by skin type. Free from harsh chemicals + Matches skin type = Right moisturizer.</p>
                     <p style="margin-top: 1rem;">
-                        <strong>💡 Best Approach:</strong> For online: Just Herbs (oily), Moms Company (dry). For offline: Dove/Tresemme sulphate-free. For zero compromise: Powdered shampoos.
+                        <strong>💡 Best Approach:</strong> Dry skin: Nat Habits/Just Herbs. Oily skin: Aroma Magic/Rustic Art. Sensitive: Cold-pressed oils/Shat Dhaut Ghee.
                     </p>
                     <p style="margin-top: 1.5rem; color: var(--text-secondary); font-size: 0.9rem;">
                         Created from YouTube video transcript analysis | Data generated on April 16, 2026
@@ -1068,28 +984,21 @@
 
     <script>
         function filterProducts(category) {
-            // Update active button
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
             event.target.classList.add('active');
 
-            // Get all product grids
             const bestProducts = document.getElementById('best-products');
             const worstProducts = document.getElementById('worst-products');
-            const ingredientsProducts = document.getElementById('ingredients-products');
 
-            // Hide all grids
             bestProducts.classList.add('hidden');
             worstProducts.classList.add('hidden');
-            ingredientsProducts.classList.add('hidden');
 
-            // Show selected grids
             switch(category) {
                 case 'all':
                     bestProducts.classList.remove('hidden');
                     worstProducts.classList.remove('hidden');
-                    ingredientsProducts.classList.remove('hidden');
                     break;
                 case 'best':
                     bestProducts.classList.remove('hidden');
@@ -1097,30 +1006,15 @@
                 case 'worst':
                     worstProducts.classList.remove('hidden');
                     break;
-                case 'ingredients':
-                    ingredientsProducts.classList.remove('hidden');
-                    break;
             }
 
-            // Smooth scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Show all sections by default on page load
         window.addEventListener('DOMContentLoaded', () => {
             filterProducts('all');
             document.querySelector('.filter-btn.all').classList.add('active');
         });
-
-        // View counter
-        fetch('https://api.countapi.xyz/hit/fittuber-products/shampoo')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('view-count').textContent = data.value.toLocaleString();
-            })
-            .catch(error => {
-                document.getElementById('view-count').textContent = '---';
-            });
     </script>
 </body>
 </html>

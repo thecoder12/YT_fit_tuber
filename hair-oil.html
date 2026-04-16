@@ -176,44 +176,32 @@
             background: var(--warning-color);
         }
 
-        /* Stats */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        .section-header {
+            display: flex;
+            align-items: center;
             gap: 0.75rem;
             margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid var(--border-color);
         }
 
-        .stat-card {
-            background: var(--card-bg);
-            padding: 0.5rem 0.75rem;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-        }
-
-        .stat-number {
+        .section-icon {
             font-size: 1.75rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--text-primary);
             font-weight: 700;
-            margin-bottom: 0.15rem;
         }
 
-        .stat-card.best .stat-number {
-            color: var(--secondary-color);
-        }
-
-        .stat-card.worst .stat-number {
-            color: var(--danger-color);
-        }
-
-        .stat-card.ingredients .stat-number {
-            color: var(--warning-color);
-        }
-
-        .stat-label {
-            color: var(--text-secondary);
-            font-weight: 500;
-            font-size: 0.75rem;
+        .section-count {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
         }
 
         /* Product Grid */
@@ -430,14 +418,27 @@
                 font-size: 0.75rem;
             }
 
+            .filter-section {
+                padding: 0.5rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .filter-buttons {
+                gap: 0.4rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
             .filter-container {
-                gap: 0.5rem;
+                gap: 0.4rem;
                 margin-bottom: 1rem;
+                flex-wrap: nowrap;
+                overflow-x: auto;
             }
 
             .filter-btn {
-                padding: 0.5rem 1rem;
-                font-size: 0.8rem;
+                padding: 0.4rem 0.7rem;
+                font-size: 0.7rem;
             }
 
             .products-grid {
@@ -537,59 +538,569 @@
         <div class="filter-section">
             <div class="filter-buttons">
                 <button class="filter-btn all active" onclick="filterProducts('all')">
-                    🔍 All Products
+                    All
                 </button>
                 <button class="filter-btn best" onclick="filterProducts('best')">
-                    ✅ Recommended (0)
+                    Good (18)
                 </button>
                 <button class="filter-btn worst" onclick="filterProducts('worst')">
-                    ❌ Avoid These (0)
+                    Bad (13)
                 </button>
                 <button class="filter-btn ingredients" onclick="filterProducts('ingredients')">
-                    ⚠️ Harmful Ingredients (0)
+                    Harmful (5)
                 </button>
             </div>
         </div>
 
-        <!-- Stats -->
-        <div class="stats">
-            <div class="stat-card best">
-                <div class="stat-number">0</div>
-                <div class="stat-label">Recommended Products</div>
+        <!-- Best Products Section -->
+        <div id="best-products">
+            <div class="section-header">
+                <span class="section-icon">✅</span>
+                <h2 class="section-title">Recommended Hair Oils</h2>
+                <span class="section-count">18 Products</span>
             </div>
-            <div class="stat-card worst">
-                <div class="stat-number">0</div>
-                <div class="stat-label">Products to Avoid</div>
+
+            <div class="products-grid">
+            <!-- Soul Flowers -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🌸</div>
+                    <div class="product-title">
+                        <h3>Soul Flowers Rosemary Lavender Hair Oil</h3>
+                        <span class="product-badge">Premium</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <strong>Price:</strong> ₹340 / 225ml<br><br>
+                    100% natural, rosemary-based oil excellent for increasing hair growth. Castor oil-based, heavy oil best for weekly head massage.
+                </div>
             </div>
-            <div class="stat-card ingredients">
-                <div class="stat-number">0</div>
-                <div class="stat-label">Harmful Ingredients</div>
+
+            <!-- Ayurashri -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🍊</div>
+                    <div class="product-title">
+                        <h3>Ayurashri Amla Hair Oil</h3>
+                        <span class="product-badge">Non-Sticky</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <strong>Price:</strong> ₹220 / 200ml<br><br>
+                    Contains amla along with 7 oils including bhringraj and argan. Amazon reviews say it's the best non-sticky hair oil.
+                </div>
+            </div>
+
+            <!-- Aim Herbals -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🌺</div>
+                    <div class="product-title">
+                        <h3>Aim Herbals Java Hibiscus Hair Oil</h3>
+                        <span class="product-badge">Research-Backed</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <strong>Price:</strong> ₹128 / 100ml<br><br>
+                    Contains hibiscus leaves and flower extracts (proven to increase hair growth in 2003 study). Includes jatamansi and curry leaves.
+                </div>
+            </div>
+
+            <!-- Nat Habits -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">❄️</div>
+                    <div class="product-title">
+                        <h3>Nat Habits Winter Dust Booty Hair Oil</h3>
+                        <span class="product-badge">Anti-Dandruff</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <strong>Price:</strong> ₹296 / 100ml<br><br>
+                    Good for dandruff. Contains 10 hair-friendly herbs cooked in sesame, mustard, and castor oils. Heavy oil, best for dry skin.
+                </div>
+            </div>
+
+            <!-- Neela Bhringadi -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🌿</div>
+                    <div class="product-title">
+                        <h3>Neela Bhringadi Hair Oil</h3>
+                        <span class="product-badge">Classical Ayurvedic</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Best for premature graying of hair. Classical ayurvedic formulation. Read reviews for effectiveness proof.
+                </div>
+            </div>
+
+            <!-- Mahabhringraj -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🌱</div>
+                    <div class="product-title">
+                        <h3>Mahabhringraj Oil</h3>
+                        <span class="product-badge">Anti-Hairfall</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Ayurveda's anti-hairfall oil. Very effective according to reviews.
+                </div>
+            </div>
+
+            <!-- Krishna's Kesha Rogam -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🕉️</div>
+                    <div class="product-title">
+                        <h3>Krishna's Kesha Rogam 15-in-1 Hair Oil</h3>
+                        <span class="product-badge">Multi-Benefit</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Good ayurvedic hair oil with multiple benefits.
+                </div>
+            </div>
+
+            <!-- Indulekha Bringa -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🌾</div>
+                    <div class="product-title">
+                        <h3>Indulekha Bringa Oil</h3>
+                        <span class="product-badge">Widely Available</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    100% natural option, available almost everywhere in local markets.
+                </div>
+            </div>
+
+            <!-- Wow Onion -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🧅</div>
+                    <div class="product-title">
+                        <h3>Wow Onion Black Seed Hair Oil</h3>
+                        <span class="product-badge">Supermarket</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Good natural option available in supermarkets.
+                </div>
+            </div>
+
+            <!-- Wow 10-in-One -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">⭐</div>
+                    <div class="product-title">
+                        <h3>Wow 10-in-One Hair Oil</h3>
+                        <span class="product-badge">Accessible</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Good option available nearby in stores.
+                </div>
+            </div>
+
+            <!-- Mamaearth Rosemary -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🌿</div>
+                    <div class="product-title">
+                        <h3>Mamaearth Rosemary Hair Oil (New Formula)</h3>
+                        <span class="product-badge">No Artificial Fragrance</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Newer formulation without artificial fragrance is acceptable.
+                </div>
+            </div>
+
+            <!-- Patanjali Kesh Kanti -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">💚</div>
+                    <div class="product-title">
+                        <h3>Patanjali Deva Pharmacy's Kesh Kanti</h3>
+                        <span class="product-badge">Economical</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Economical and completely natural option.
+                </div>
+            </div>
+
+            <!-- Coconut Oil -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🥥</div>
+                    <div class="product-title">
+                        <h3>Coconut Oil (Pure)</h3>
+                        <span class="product-badge">Traditional</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Naturally the best for humid conditions. Traditional choice in South India. Single ingredient, no additives.
+                </div>
+            </div>
+
+            <!-- Mustard Oil -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🌰</div>
+                    <div class="product-title">
+                        <h3>Mustard Oil (Pure)</h3>
+                        <span class="product-badge">Cold Weather</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Go-to option for dry, cold weather (North India). Works like gel for hair.
+                </div>
+            </div>
+
+            <!-- Almond Oil -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🌰</div>
+                    <div class="product-title">
+                        <h3>Almond Oil (Pure)</h3>
+                        <span class="product-badge">Anti-Dandruff</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Best for dandruff. Single ingredient oil.
+                </div>
+            </div>
+
+            <!-- Castor Oil -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🌱</div>
+                    <div class="product-title">
+                        <h3>Castor Oil (Pure)</h3>
+                        <span class="product-badge">Fast Growth</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Best for fast hair growth. Single ingredient oil.
+                </div>
+            </div>
+
+            <!-- DIY Ayurvedic -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🏠</div>
+                    <div class="product-title">
+                        <h3>DIY Ayurvedic Hair Oil</h3>
+                        <span class="product-badge">Most Economical</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <strong>Cost:</strong> Half the price of commercial oils<br><br>
+                    <strong>Recipe:</strong> 250ml sesame/coconut/mustard oil + 50ml castor oil + 4 amla + 20-25 curry leaves + ½ tsp fenugreek + ¼ tsp kalonji + 300ml water<br><br>
+                    <strong>Method:</strong> Blend herbs with water, cook with oil in iron kadhai on low flame for 15-20 minutes until water evaporates. Strain and store.<br><br>
+                    Reduces hairfall, premature graying, and dandruff. Contains high quantities of effective ingredients.
+                </div>
+            </div>
+
+            <!-- Biomuni Shampoo -->
+            <div class="product-card best" data-category="best">
+                <div class="product-header">
+                    <div class="product-icon">🧴</div>
+                    <div class="product-title">
+                        <h3>Biomuni Damage Control Shampoo</h3>
+                        <span class="product-badge">Recommended Shampoo</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Designed to combat hard water damage. Uses mild surfactants, no sulfates, no parabens, no silicones, no artificial fragrances or colors. Contains rosemary, bhringraj, aloe vera, onion, hibiscus, beetroot. Suitable for all hair types.
+                </div>
+            </div>
             </div>
         </div>
 
-        <!-- Empty State -->
-        <div class="empty-state">
-            <h2>🔜 Coming Soon</h2>
-            <p>Hair oil analysis will be available once the Fit Tuber review video is processed.</p>
-            <p style="margin-top: 1rem;">To add data, run:</p>
-            <p style="margin-top: 0.5rem; font-family: monospace; background: rgba(255,255,255,0.2); padding: 0.5rem; border-radius: 8px;">
-                python3.13 main.py "YOUTUBE_URL" --category hair-oil
-            </p>
+        <!-- Worst Products Section -->
+        <div id="worst-products">
+            <div class="section-header">
+                <span class="section-icon">❌</span>
+                <h2 class="section-title">Products to Avoid</h2>
+                <span class="section-count">13 Products</span>
+            </div>
+
+            <div class="products-grid">
+            <!-- Mineral Oil Brands - Almond -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Popular Almond Oil Brands</h3>
+                        <span class="product-badge">70-80% Mineral Oil</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Contain 70-80% mineral oil (petroleum byproduct). May contain carcinogenic compounds.
+                </div>
+            </div>
+
+            <!-- Mineral Oil Brands - Amla -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Popular Amla Oil Brands</h3>
+                        <span class="product-badge">Mineral Oil Based</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Contain 70-80% mineral oil despite amla marketing.
+                </div>
+            </div>
+
+            <!-- Coconut Aloe Brands -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Coconut Oil with Aloe Vera (Commercial)</h3>
+                        <span class="product-badge">Mineral Oil Base</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Contains mineral oil as base despite natural-sounding name.
+                </div>
+            </div>
+
+            <!-- All Clear -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>All Clear Oil</h3>
+                        <span class="product-badge">Avoid</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Mineral oil based.
+                </div>
+            </div>
+
+            <!-- Navaratna -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Navaratna Cool Oil</h3>
+                        <span class="product-badge">Light Liquid Paraffin</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Contains mineral oil/light liquid paraffin.
+                </div>
+            </div>
+
+            <!-- Cinthol King -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Cinthol King Hair Oil</h3>
+                        <span class="product-badge">Mineral Oil</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Mineral oil based.
+                </div>
+            </div>
+
+            <!-- Biotique -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Biotique Herbal Hair Oils</h3>
+                        <span class="product-badge">Hidden Ingredients</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Don't disclose oil base (likely mineral oil). If they used coconut, mustard, or sesame, they would proudly mention it.
+                </div>
+            </div>
+
+            <!-- Imami -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Imami 7-in-One Hair Oil</h3>
+                        <span class="product-badge">Mineral Oil Main</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Main ingredient is mineral oil. No match for natural alternatives.
+                </div>
+            </div>
+
+            <!-- Wow Anti-Hairfall -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Wow Anti-Hairfall Hair Oil</h3>
+                        <span class="product-badge">Contains BHT</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Contains BHT (harmful preservative). Better than Category 1 but still has artificial ingredients.
+                </div>
+            </div>
+
+            <!-- Mamaearth Old Formula -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Mamaearth Onion Hair Oil (Old Formula)</h3>
+                        <span class="product-badge">Artificial Fragrance</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Started adding artificial fragrance recently. New rosemary formula without fragrance is acceptable.
+                </div>
+            </div>
+
+            <!-- Patanjali Most -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Patanjali Hair Oils (Most Variants)</h3>
+                        <span class="product-badge">Colors & Fragrance</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Contain colors and sugandh dravya (artificial fragrance). Exception: Deva Pharmacy's Kesh Kanti is good.
+                </div>
+            </div>
+
+            <!-- Indulekha Sua Kutaja -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">⛔</div>
+                    <div class="product-title">
+                        <h3>Indulekha Sua Kutaja Hair Oil</h3>
+                        <span class="product-badge">Artificial Fragrance</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Contains artificial fragrance. Indulekha Bringa Oil (natural) is acceptable.
+                </div>
+            </div>
+
+            <!-- Adiwasi Scam -->
+            <div class="product-card worst" data-category="worst">
+                <div class="product-header">
+                    <div class="product-icon">🚫</div>
+                    <div class="product-title">
+                        <h3>ADIWASI HAIR OIL - COMPLETE SCAM</h3>
+                        <span class="product-badge">SCAM</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <strong>Why it's a scam:</strong><br>
+                    • Countless brands claiming to be "original" - impossible to identify which is real<br>
+                    • No ingredient disclosure on bottles<br>
+                    • Claims 108 herbs but doesn't name them<br>
+                    • Only shows photos of same 2-4 people with long hair<br>
+                    • Not listed on e-commerce platforms to avoid genuine reviews<br>
+                    • Neither genuine nor shows any signs of giving positive results<br><br>
+                    <strong>Verdict:</strong> Avoid completely. Make DIY hair oil instead.
+                </div>
+            </div>
+            </div>
         </div>
 
-        <!-- Best Products Section (Hidden until data available) -->
-        <div class="products-grid hidden" id="best-products">
-            <!-- Products will be added when video is analyzed -->
-        </div>
+        <!-- Harmful Ingredients Section -->
+        <div id="ingredients-products">
+            <div class="section-header">
+                <span class="section-icon">⚠️</span>
+                <h2 class="section-title">Harmful Ingredients to Avoid</h2>
+                <span class="section-count">5 Ingredients</span>
+            </div>
 
-        <!-- Worst Products Section (Hidden until data available) -->
-        <div class="products-grid hidden" id="worst-products">
-            <!-- Products will be added when video is analyzed -->
-        </div>
+            <div class="products-grid">
+            <!-- Mineral Oil -->
+            <div class="product-card ingredient" data-category="ingredients">
+                <div class="product-header">
+                    <div class="product-icon">☣️</div>
+                    <div class="product-title">
+                        <h3>Mineral Oil / Light Liquid Paraffin (LLP)</h3>
+                        <span class="product-badge">Carcinogenic Risk</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Petroleum industry byproduct. May contain carcinogenic polycyclic aromatic hydrocarbons unless labeled "white mineral oil" or "white petroleum" (which no Indian brand mentions). Found in 70-80% of commercial hair oils.
+                </div>
+            </div>
 
-        <!-- Harmful Ingredients Section (Hidden until data available) -->
-        <div class="products-grid hidden" id="ingredients-products">
-            <!-- Ingredients will be added when video is analyzed -->
+            <!-- BHT -->
+            <div class="product-card ingredient" data-category="ingredients">
+                <div class="product-header">
+                    <div class="product-icon">☣️</div>
+                    <div class="product-title">
+                        <h3>BHT (Butylated Hydroxytoluene)</h3>
+                        <span class="product-badge">Harmful</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Harmful preservative found in Wow anti-hairfall oil. Can damage hair over time.
+                </div>
+            </div>
+
+            <!-- Artificial Fragrance -->
+            <div class="product-card ingredient" data-category="ingredients">
+                <div class="product-header">
+                    <div class="product-icon">☣️</div>
+                    <div class="product-title">
+                        <h3>Artificial Fragrance / Sugandh Dravya</h3>
+                        <span class="product-badge">Irritant</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Unnecessary chemicals that can irritate scalp. Found in Patanjali oils, old Mamaearth formulas, and Indulekha Sua Kutaja.
+                </div>
+            </div>
+
+            <!-- Cosmetic Colors -->
+            <div class="product-card ingredient" data-category="ingredients">
+                <div class="product-header">
+                    <div class="product-icon">☣️</div>
+                    <div class="product-title">
+                        <h3>Cosmetic Colors</h3>
+                        <span class="product-badge">No Benefit</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    No benefit, potential harm to hair and scalp. Found in many Patanjali variants.
+                </div>
+            </div>
+
+            <!-- Harsh Preservatives -->
+            <div class="product-card ingredient" data-category="ingredients">
+                <div class="product-header">
+                    <div class="product-icon">☣️</div>
+                    <div class="product-title">
+                        <h3>Harsh Preservatives & Chemical Names</h3>
+                        <span class="product-badge">Harmful</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    Can damage hair over time. Check labels for unpronounceable chemical names and reject products containing them.
+                </div>
+            </div>
+            </div>
         </div>
 
         <!-- Footer -->
@@ -597,13 +1108,17 @@
             <div class="container">
                 <div class="footer-content">
                     <div class="disclaimer">
-                        <strong>⚠️ Disclaimer:</strong> This information is based on Fit Tuber's review (Video ID: r-DIv65zHwY). The reviewer states this is an honest, unsponsored opinion. Always verify claims independently and consult healthcare professionals for medical advice.
+                        <strong>⚠️ Disclaimer:</strong> This information is based on Fit Tuber's review (Video ID: r-DIv65zHwY). The reviewer analyzed 30+ hair oil brands and exposes the widespread use of mineral oil in Indian market. This is an honest, unsponsored opinion. Always verify claims independently.
                     </div>
                     <div class="view-counter">
                         👁️ <span class="count" id="view-count">Loading...</span> views
                     </div>
+                    <p><strong>Key Message:</strong> 70-80% of commercial hair oils contain mineral oil (petroleum byproduct). Choose natural oils or make DIY ayurvedic oil.</p>
+                    <p style="margin-top: 1rem;">
+                        <strong>💡 Shopping Tips:</strong> Check labels for mineral oil, artificial fragrance, colors, and harsh preservatives. Reject if present. Apply oil 2x per week for best results.
+                    </p>
                     <p style="margin-top: 1.5rem; color: var(--text-secondary); font-size: 0.9rem;">
-                        Part of the YouTube FitTuber Product Analysis Project
+                        Created from YouTube video transcript analysis | Data generated on April 16, 2026
                     </p>
                 </div>
             </div>
