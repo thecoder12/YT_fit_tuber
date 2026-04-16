@@ -13,23 +13,26 @@
         }
 
         :root {
-            --primary-color: #2563eb;
-            --secondary-color: #10b981;
-            --danger-color: #ef4444;
-            --warning-color: #f59e0b;
-            --bg-color: #f8fafc;
+            --primary-color: #047857;
+            --primary-light: #059669;
+            --secondary-color: #0891b2;
+            --danger-color: #dc2626;
+            --warning-color: #d97706;
+            --bg-color: #f9fafb;
             --card-bg: #ffffff;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
-            --border-color: #e2e8f0;
+            --text-primary: #111827;
+            --text-secondary: #6b7280;
+            --border-color: #e5e7eb;
             --success-light: #d1fae5;
             --danger-light: #fee2e2;
-            --hover-bg: #f1f5f9;
+            --hover-bg: #f3f4f6;
+            --header-bg: #ffffff;
+            --accent-color: #10b981;
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--bg-color);
             color: var(--text-primary);
             line-height: 1.6;
             min-height: 100vh;
@@ -44,9 +47,9 @@
 
         /* Header */
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background: var(--header-bg);
+            border-bottom: 2px solid var(--primary-color);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             padding: 0.5rem 0;
             margin-bottom: 1rem;
             position: sticky;
@@ -80,14 +83,15 @@
         }
 
         .channel-info {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--primary-color);
             color: white;
             padding: 0.4rem 0.8rem;
-            border-radius: 20px;
+            border-radius: 6px;
             font-weight: 600;
             font-size: 0.75rem;
             white-space: nowrap;
             flex-shrink: 0;
+            border: 1px solid var(--primary-light);
         }
 
         /* Stats Cards */
@@ -102,13 +106,16 @@
             background: var(--card-bg);
             padding: 0.5rem 0.75rem;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .stat-card:hover {
             transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-color);
         }
 
         .stat-icon {
@@ -132,8 +139,9 @@
 
         .table-container {
             background: var(--card-bg);
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
             overflow: hidden;
         }
 
@@ -143,7 +151,7 @@
         }
 
         thead {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--primary-color);
             color: white;
         }
 
@@ -162,7 +170,7 @@
         }
 
         tbody tr:hover {
-            background-color: var(--hover-bg);
+            background: #f0fdf4;
             cursor: pointer;
         }
 
@@ -195,32 +203,35 @@
         .badge {
             display: inline-block;
             padding: 0.4rem 0.8rem;
-            border-radius: 50px;
+            border-radius: 16px;
             font-size: 0.85rem;
             font-weight: 600;
             margin: 0.25rem;
         }
 
         .badge-success {
-            background: var(--success-light);
-            color: var(--secondary-color);
+            background: #d1fae5;
+            color: #047857;
+            border: 1px solid #a7f3d0;
         }
 
         .badge-danger {
-            background: var(--danger-light);
-            color: var(--danger-color);
+            background: #fee2e2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
         }
 
         .badge-info {
-            background: #dbeafe;
-            color: var(--primary-color);
+            background: #cffafe;
+            color: #0891b2;
+            border: 1px solid #a5f3fc;
         }
 
         .view-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--primary-color);
             color: white;
             padding: 0.75rem 1.5rem;
-            border-radius: 50px;
+            border-radius: 6px;
             border: none;
             font-weight: 600;
             cursor: pointer;
@@ -230,8 +241,9 @@
         }
 
         .view-btn:hover {
+            background: var(--primary-light);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 4px 8px rgba(4, 120, 87, 0.3);
         }
 
         .price-range {
@@ -262,13 +274,14 @@
         }
 
         .view-counter {
-            display: inline-flex;
+            display: none; /* Hidden - service unavailable */
+            /* display: inline-flex; */
             align-items: center;
             gap: 0.5rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--primary-color);
             color: white;
             padding: 0.3rem 0.8rem;
-            border-radius: 20px;
+            border-radius: 6px;
             font-size: 0.8rem;
             font-weight: 600;
             margin-top: 0.5rem;
@@ -281,12 +294,16 @@
         /* Responsive */
         @media (max-width: 968px) {
             .header-content {
-                flex-direction: column;
-                align-items: stretch;
+                gap: 0.5rem;
+            }
+
+            .header-main {
+                text-align: left;
             }
 
             .channel-info {
-                text-align: center;
+                font-size: 0.65rem;
+                padding: 0.3rem 0.6rem;
             }
 
             h1 {
@@ -294,29 +311,107 @@
             }
 
             .subtitle {
-                font-size: 0.8rem;
+                font-size: 0.75rem;
             }
 
             .table-container {
-                overflow-x: auto;
+                overflow-x: visible;
+            }
+
+            /* Hide price and video source columns on mobile */
+            .hide-mobile {
+                display: none !important;
             }
 
             table {
-                min-width: 800px;
+                width: 100%;
             }
         }
 
+        /* Mobile Optimization - Aggressive Compression */
         @media (max-width: 640px) {
+            header {
+                padding: 0.3rem 0;
+                margin-bottom: 0.5rem;
+            }
+
+            .header-content {
+                gap: 0.4rem;
+            }
+
+            .header-main {
+                text-align: left;
+            }
+
             h1 {
-                font-size: 1.5rem;
+                font-size: 0.9rem;
+                margin-bottom: 0.05rem;
             }
 
             .subtitle {
+                font-size: 0.6rem;
+            }
+
+            .channel-info {
+                padding: 0.25rem 0.5rem;
+                font-size: 0.6rem;
+            }
+
+            /* Compact Stats Grid - Single Row */
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 0.3rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .stat-card {
+                padding: 0.3rem 0.2rem;
+            }
+
+            .stat-icon {
+                font-size: 1rem;
+                margin-bottom: 0.05rem;
+            }
+
+            .stat-number {
                 font-size: 1rem;
             }
 
+            .stat-label {
+                font-size: 0.55rem;
+                margin-top: 0.05rem;
+                line-height: 1.1;
+            }
+
             th, td {
-                padding: 1rem 0.75rem;
+                padding: 0.75rem 0.5rem;
+                font-size: 0.8rem;
+            }
+
+            .category-icon {
+                font-size: 1.5rem;
+            }
+
+            .category-name {
+                font-size: 1rem;
+            }
+
+            .category-desc {
+                font-size: 0.75rem;
+            }
+
+            .badge {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.75rem;
+                margin: 0.15rem 0.1rem;
+                display: inline-block;
+            }
+
+            .view-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+                width: 100%;
+                text-align: center;
             }
         }
 
@@ -365,17 +460,17 @@
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="stat-icon">📋</div>
-                <div class="stat-number">4</div>
+                <div class="stat-number">5</div>
                 <div class="stat-label">Product Categories</div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon">✅</div>
-                <div class="stat-number">52</div>
+                <div class="stat-number">67</div>
                 <div class="stat-label">Recommended Products</div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon">❌</div>
-                <div class="stat-number">52</div>
+                <div class="stat-number">59</div>
                 <div class="stat-label">Products to Avoid</div>
             </div>
             <div class="stat-card">
@@ -393,8 +488,8 @@
                     <tr>
                         <th>Category</th>
                         <th>Products Reviewed</th>
-                        <th>Price Range</th>
-                        <th>Video Source</th>
+                        <th class="hide-mobile">Price Range</th>
+                        <th class="hide-mobile">Video Source</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -415,11 +510,11 @@
                             <span class="badge badge-danger">9 Avoid</span>
                             <span class="badge badge-info">4 Harmful Ingredients</span>
                         </td>
-                        <td>
+                        <td class="hide-mobile">
                             <div class="price-range">₹70 - ₹219</div>
                             <div style="font-size: 0.85rem; color: var(--text-secondary);">Affordable options available</div>
                         </td>
-                        <td>
+                        <td class="hide-mobile">
                             <div><strong>Fit Tuber</strong></div>
                             <div class="video-id">vqRBCa1Jv4w</div>
                         </td>
@@ -444,11 +539,11 @@
                             <span class="badge badge-danger">14 Avoid</span>
                             <span class="badge badge-info">6 Harmful Ingredients</span>
                         </td>
-                        <td>
+                        <td class="hide-mobile">
                             <div class="price-range">₹75 - ₹384</div>
                             <div style="font-size: 0.85rem; color: var(--text-secondary);">Traditional DIY option: ₹120/kg</div>
                         </td>
-                        <td>
+                        <td class="hide-mobile">
                             <div><strong>Fit Tuber</strong></div>
                             <div class="video-id">c6yvIGvLWC8</div>
                         </td>
@@ -473,11 +568,11 @@
                             <span class="badge badge-danger">13 Avoid</span>
                             <span class="badge badge-info">5 Harmful Ingredients</span>
                         </td>
-                        <td>
+                        <td class="hide-mobile">
                             <div class="price-range">₹128 - ₹340</div>
                             <div style="font-size: 0.85rem; color: var(--text-secondary);">DIY option: Half the price</div>
                         </td>
-                        <td>
+                        <td class="hide-mobile">
                             <div><strong>Fit Tuber</strong></div>
                             <div class="video-id">r-DIv65zHwY</div>
                         </td>
@@ -502,16 +597,45 @@
                             <span class="badge badge-danger">16 Avoid</span>
                             <span class="badge badge-info">6 Harmful Ingredients</span>
                         </td>
-                        <td>
+                        <td class="hide-mobile">
                             <div class="price-range">₹100 - ₹262</div>
                             <div style="font-size: 0.85rem; color: var(--text-secondary);">DIY Besan+Turmeric: ₹90/500g</div>
                         </td>
-                        <td>
+                        <td class="hide-mobile">
                             <div><strong>Fit Tuber</strong></div>
                             <div class="video-id">SZmNa9931eA</div>
                         </td>
                         <td>
                             <a href="facewash.html" class="view-btn" onclick="event.stopPropagation()">View Details →</a>
+                        </td>
+                    </tr>
+
+                    <!-- Shampoo Row -->
+                    <tr onclick="window.location.href='shampoo.html'">
+                        <td>
+                            <div style="display: flex; align-items: center;">
+                                <span class="category-icon">🚿</span>
+                                <div>
+                                    <div class="category-name">Shampoo</div>
+                                    <div class="category-desc">Natural & Toxin-Free Shampoos</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="badge badge-success">15 Recommended</span>
+                            <span class="badge badge-danger">7 Avoid</span>
+                            <span class="badge badge-info">6 Harmful Ingredients</span>
+                        </td>
+                        <td class="hide-mobile">
+                            <div class="price-range">₹286 - ₹450</div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary);">DIY Powdered: ₹390/500g</div>
+                        </td>
+                        <td class="hide-mobile">
+                            <div><strong>Fit Tuber</strong></div>
+                            <div class="video-id">BvYwa6u0WLI</div>
+                        </td>
+                        <td>
+                            <a href="shampoo.html" class="view-btn" onclick="event.stopPropagation()">View Details →</a>
                         </td>
                     </tr>
                 </tbody>
