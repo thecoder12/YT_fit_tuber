@@ -47,38 +47,47 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 0.75rem 0;
-            margin-bottom: 1.5rem;
+            padding: 0.5rem 0;
+            margin-bottom: 1rem;
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
         .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .header-main {
+            flex: 1;
             text-align: center;
         }
 
         h1 {
             color: var(--primary-color);
-            font-size: 1.75rem;
+            font-size: 1.4rem;
             font-weight: 700;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.15rem;
         }
 
         .subtitle {
             color: var(--text-secondary);
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            margin-bottom: 0;
         }
 
         .channel-info {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
             font-weight: 600;
-            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         /* Stats Cards */
@@ -233,24 +242,59 @@
         /* Footer */
         footer {
             background: rgba(255, 255, 255, 0.95);
-            padding: 1rem 0;
-            margin-top: 2rem;
+            padding: 0.5rem 0;
+            margin-top: 1.5rem;
             border-radius: 12px;
         }
 
         .footer-content {
             text-align: center;
             color: var(--text-secondary);
+            font-size: 0.85rem;
         }
 
         .footer-content strong {
             color: var(--primary-color);
         }
 
+        .footer-content p {
+            margin: 0.3rem 0;
+        }
+
+        .view-counter {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .view-counter .count {
+            font-weight: 700;
+        }
+
         /* Responsive */
         @media (max-width: 968px) {
+            .header-content {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .channel-info {
+                text-align: center;
+            }
+
             h1 {
-                font-size: 2rem;
+                font-size: 1.2rem;
+            }
+
+            .subtitle {
+                font-size: 0.8rem;
             }
 
             .table-container {
@@ -305,10 +349,12 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <h1>🌿 Natural Products Guide</h1>
-                <p class="subtitle">Expert Reviews & Recommendations Across Multiple Categories</p>
+                <div class="header-main">
+                    <h1>🌿 Natural Products Guide</h1>
+                    <p class="subtitle">Expert Reviews & Recommendations</p>
+                </div>
                 <div class="channel-info">
-                    📺 Based on Fit Tuber Reviews by Vivek
+                    📺 Fit Tuber
                 </div>
             </div>
         </div>
@@ -319,17 +365,17 @@
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="stat-icon">📋</div>
-                <div class="stat-number">3</div>
+                <div class="stat-number">4</div>
                 <div class="stat-label">Product Categories</div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon">✅</div>
-                <div class="stat-number">34</div>
+                <div class="stat-number">52</div>
                 <div class="stat-label">Recommended Products</div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon">❌</div>
-                <div class="stat-number">36</div>
+                <div class="stat-number">52</div>
                 <div class="stat-label">Products to Avoid</div>
             </div>
             <div class="stat-card">
@@ -439,6 +485,35 @@
                             <a href="hair-oil.html" class="view-btn" onclick="event.stopPropagation()">View Details →</a>
                         </td>
                     </tr>
+
+                    <!-- Face Wash Row -->
+                    <tr onclick="window.location.href='facewash.html'">
+                        <td>
+                            <div style="display: flex; align-items: center;">
+                                <span class="category-icon">🧴</span>
+                                <div>
+                                    <div class="category-name">Face Wash</div>
+                                    <div class="category-desc">Natural & Toxin-Free Face Cleansers</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="badge badge-success">18 Recommended</span>
+                            <span class="badge badge-danger">16 Avoid</span>
+                            <span class="badge badge-info">6 Harmful Ingredients</span>
+                        </td>
+                        <td>
+                            <div class="price-range">₹100 - ₹262</div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary);">DIY Besan+Turmeric: ₹90/500g</div>
+                        </td>
+                        <td>
+                            <div><strong>Fit Tuber</strong></div>
+                            <div class="video-id">SZmNa9931eA</div>
+                        </td>
+                        <td>
+                            <a href="facewash.html" class="view-btn" onclick="event.stopPropagation()">View Details →</a>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -456,6 +531,9 @@
                     <p style="color: var(--text-secondary); font-size: 0.9rem;">
                         ⚠️ Always check product ingredients yourself. Formulations may change over time.
                     </p>
+                    <div class="view-counter">
+                        👁️ <span class="count" id="view-count">Loading...</span> views
+                    </div>
                     <p style="margin-top: 1.5rem; color: var(--text-secondary); font-size: 0.9rem;">
                         Created from YouTube video transcript analysis | Last updated: April 16, 2026
                     </p>
@@ -477,6 +555,16 @@
             console.log(`Viewing category: ${category}`);
             // Add your analytics code here
         }
+
+        // View counter
+        fetch('https://api.countapi.xyz/hit/fittuber-products/index')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('view-count').textContent = data.value.toLocaleString();
+            })
+            .catch(error => {
+                document.getElementById('view-count').textContent = '---';
+            });
     </script>
 </body>
 </html>

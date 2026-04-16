@@ -46,8 +46,8 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 0.75rem 0;
-            margin-bottom: 1.5rem;
+            padding: 0.5rem 0;
+            margin-bottom: 1rem;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -55,16 +55,22 @@
 
         .header-content {
             display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .header-main {
+            flex: 1;
         }
 
         .breadcrumb {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             color: var(--text-secondary);
+            margin-bottom: 0.3rem;
         }
 
         .breadcrumb a {
@@ -79,25 +85,25 @@
 
         h1 {
             color: var(--primary-color);
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            text-align: center;
+            margin-bottom: 0.15rem;
         }
 
         .subtitle {
-            text-align: center;
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
         .video-info {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            text-align: center;
-            margin-top: 0.5rem;
-            font-size: 0.85rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            white-space: nowrap;
+            flex-shrink: 0;
+            align-self: flex-start;
         }
 
         .video-info a {
@@ -312,33 +318,68 @@
         /* Footer */
         footer {
             background: rgba(255, 255, 255, 0.95);
-            padding: 1rem 0;
-            margin-top: 2rem;
+            padding: 0.5rem 0;
+            margin-top: 1.5rem;
             border-radius: 12px;
         }
 
         .footer-content {
             text-align: center;
             color: var(--text-secondary);
+            font-size: 0.85rem;
         }
 
         .footer-content strong {
             color: var(--primary-color);
         }
 
+        .footer-content p {
+            margin: 0.3rem 0;
+        }
+
+        .view-counter {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .view-counter .count {
+            font-weight: 700;
+        }
+
         .disclaimer {
             background: #fef3c7;
             border-left: 4px solid var(--warning-color);
-            padding: 0.75rem;
-            margin: 0.75rem 0;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
             border-radius: 8px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+
+            .video-info {
+                align-self: stretch;
+                text-align: center;
+            }
+
             h1 {
-                font-size: 1.5rem;
+                font-size: 1.2rem;
+            }
+
+            .subtitle {
+                font-size: 0.75rem;
             }
 
             .products-grid {
@@ -376,17 +417,17 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="breadcrumb">
-                    <a href="index.html">🏠 Home</a>
-                    <span>›</span>
-                    <span>Soap & Body Wash</span>
+                <div class="header-main">
+                    <div class="breadcrumb">
+                        <a href="index.html">🏠 Home</a>
+                        <span>›</span>
+                        <span>Soap & Body Wash</span>
+                    </div>
+                    <h1>🧼 Natural Soap & Body Wash Guide</h1>
+                    <p class="subtitle">Best Soaps in India 2025</p>
                 </div>
-                <h1>🧼 Natural Soap & Body Wash Guide</h1>
-                <p class="subtitle">Best Soaps and Body Washes in India 2025 | Based on Fit Tuber Review</p>
                 <div class="video-info">
-                    <strong>📺 Source:</strong> <a href="https://www.youtube.com/watch?v=c6yvIGvLWC8" target="_blank">Watch on YouTube</a> | 
-                    <strong>Channel:</strong> Fit Tuber | 
-                    <strong>Presenter:</strong> Vivek
+                    <a href="https://www.youtube.com/watch?v=c6yvIGvLWC8" target="_blank" style="color: white;">📺 Watch</a>
                 </div>
             </div>
         </div>
@@ -856,6 +897,9 @@
                     <div class="disclaimer">
                         <strong>⚠️ Key Message:</strong> Good soaps should remove dirt while preserving natural oils. If you need body lotion after every bath, your soap is stripping your skin's natural oils. Switch to mild, natural alternatives.
                     </div>
+                    <div class="view-counter">
+                        👁️ <span class="count" id="view-count">Loading...</span> views
+                    </div>
                     <p><strong>💡 Pro Tip:</strong> Use besan (gram flour) occasionally even with commercial products for authentic ayurvedic cleansing.</p>
                     <p style="margin-top: 1rem;"><strong>Presenter:</strong> Vivek (Fit Tuber) | <strong>Disclosure:</strong> Unsponsored, honest review</p>
                     <p style="margin-top: 1.5rem; color: var(--text-secondary); font-size: 0.9rem;">
@@ -911,6 +955,16 @@
             filterProducts('all');
             document.querySelector('.filter-btn.all').classList.add('active');
         });
+
+        // View counter
+        fetch('https://api.countapi.xyz/hit/fittuber-products/soap')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('view-count').textContent = data.value.toLocaleString();
+            })
+            .catch(error => {
+                document.getElementById('view-count').textContent = '---';
+            });
     </script>
 </body>
 </html>
